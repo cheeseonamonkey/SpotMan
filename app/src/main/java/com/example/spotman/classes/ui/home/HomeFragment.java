@@ -10,26 +10,40 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.spotman.MainActivity;
+import com.example.spotman.classes.ui.splash.SplashDialog;
 import com.example.spotman.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment
 {
-
+    //binding vars:
     private HomeViewModel homeViewModel;
     private FragmentHomeBinding binding;
+
+    //link to main activity
+    MainActivity mainActivity;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState)
     {
+
+//binding:
         homeViewModel =
                 new ViewModelProvider(this).get(HomeViewModel.class);
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+//=======================================================================
 
 
 
-binding.btntst.setOnClickListener(new View.OnClickListener()
+
+
+        mainActivity = (MainActivity) getContext();
+
+//=======================================================================
+        //LISTENERS:
+
+binding.btnTest.setOnClickListener(new View.OnClickListener()
 {
     @Override
     public void onClick(View view)
@@ -37,27 +51,31 @@ binding.btntst.setOnClickListener(new View.OnClickListener()
 
         String str = "";
 
-        //MainActivity.requester.Get("fact");
+        new SplashDialog().show(getChildFragmentManager(), "splashFragment");
 
-        //MainActivity.log.log( MainActivity.requester.GetAsync("fact") );
 
-    }
-});
 
-binding.btnOut.setOnClickListener(new View.OnClickListener()
-{
-    @Override
-    public void onClick(View view)
-    {
-        MainActivity.log.log( "" );
     }
 });
 
 
 
 
+
+
+
+//end of listeners
+//=======================================================================
+
+
+
+
+
+        // return binding
         return root;
     }
+
+
 
     @Override
     public void onDestroyView()
