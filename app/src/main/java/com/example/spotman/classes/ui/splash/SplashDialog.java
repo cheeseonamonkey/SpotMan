@@ -63,8 +63,11 @@ public class SplashDialog extends DialogFragment
 
                 Context c = MainActivity.global.mainContext;
 
+                //start auth activity
                 Intent authIntent = new Intent(c, AuthActivity.class);
                 c.startActivity(authIntent);
+
+
 
             }
         });

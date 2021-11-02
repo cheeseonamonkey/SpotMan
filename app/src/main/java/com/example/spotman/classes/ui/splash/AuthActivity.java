@@ -67,7 +67,12 @@ public class AuthActivity extends AppCompatActivity
                 //success:
                 case TOKEN:
 
-                    MainActivity.log.log("Auth success! ", "auth");
+                    authResponse.getAccessToken();
+
+
+                    //to be exchanged for an auth code
+                  //   authToken = authResponse.getAccessToken();
+                    MainActivity.log.log("Auth success! \n-\t Access token= " + authResponse.getAccessToken(), "auth");
 
 
 
