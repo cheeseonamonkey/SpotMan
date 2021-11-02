@@ -27,6 +27,7 @@ public class AccessToken
 
     public void resetAccessToken(Context context)
     {
+
        // Globals.Connected = false;
         access_token = "";
 

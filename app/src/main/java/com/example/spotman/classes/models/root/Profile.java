@@ -3,6 +3,7 @@ package com.example.spotman.classes.models.root;
 import com.example.spotman.classes.models.subObjects.ExternalUrls;
 import com.example.spotman.classes.models.subObjects.Followers;
 import com.example.spotman.classes.models.subObjects.Image;
+import com.google.gson.Gson;
 
 import java.util.List;
 
@@ -34,5 +35,10 @@ public class Profile
                 ", type='" + type + '\'' +
                 ", uri='" + uri + '\'' +
                 '}';
+    }
+
+    public static Profile fromJson(Gson gson, String strJson)
+    {
+        return gson.fromJson(strJson, Profile.class);
     }
 }

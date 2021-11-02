@@ -151,9 +151,13 @@ public class Requester
                 //or we can run on the UI thread:
                     /*
                     */
+                    //=======================================================================
+                    //      YOU ARE HERE
+                    // =======================================================================
+
+                    dataStore.setSelectedProfile(strJson);
 
 
-                    dataStore.setProfile(strJson);
 
 
                 }

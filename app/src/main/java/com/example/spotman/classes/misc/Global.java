@@ -40,13 +40,11 @@ public class Global
 
     public Profile selectedProfile;
 
-    public void setProfile(String profileJson)
+    public void setSelectedProfile(String json)
     {
-        selectedProfile = gson.fromJson(profileJson, Profile.class);
+        selectedProfile = Profile.fromJson(gson, json);
 
-        MainActivity.log.log("Profile set successfully! \n\t " + selectedProfile.toString(), "data");
     }
-
 
 
 
@@ -62,11 +60,6 @@ public class Global
     public void initRequester(Context context)
     {
         requester = new Requester(context);
-    }
-
-    public void initAccessToken()
-    {
-        accessToken = new AccessToken();
     }
 
 }
