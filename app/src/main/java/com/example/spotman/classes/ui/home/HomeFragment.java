@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.spotman.MainActivity;
+import com.example.spotman.classes.models.root.Profile;
 import com.example.spotman.classes.ui.splash.SplashDialog;
 import com.example.spotman.databinding.FragmentHomeBinding;
 
@@ -19,8 +20,7 @@ public class HomeFragment extends Fragment
     private HomeViewModel homeViewModel;
     private FragmentHomeBinding binding;
 
-    //link to main activity
-    MainActivity mainActivity;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState)
@@ -34,32 +34,45 @@ public class HomeFragment extends Fragment
         View root = binding.getRoot();
 //=======================================================================
 
+        //after init stuff:
 
 
+        //
 
-
-        mainActivity = (MainActivity) getContext();
 
 //=======================================================================
         //LISTENERS:
 
-binding.btnTest.setOnClickListener(new View.OnClickListener()
-{
-    @Override
-    public void onClick(View view)
-    {
+        //btnConnect
+        binding.btnConnect.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
 
-        String str = "";
+                String str = "";
 
-        new SplashDialog().show(getChildFragmentManager(), "splashFragment");
-
-
-
-    }
-});
+                new SplashDialog().show(getChildFragmentManager(), "splashFragment");
 
 
 
+            }
+        });
+
+
+
+        binding.btnOut.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                MainActivity.global.requester.GetAsync("me", MainActivity.global.accessToken.access_token , getContext(), MainActivity.global);
+
+
+
+
+            }
+        });
 
 
 

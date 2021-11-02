@@ -20,4 +20,19 @@ public class Profile
     private List<Image> images;
     private String type;
     private String uri;
+
+    @Override
+    public String toString()
+    {
+        return "Profile{" +
+                "display_name='" + display_name + '\'' +
+                ", external_urls=" + external_urls +
+                ", followers=" + followers +
+                ", href='" + href + '\'' +
+                ", id='" + id + '\'' +
+                ", images=" + images +
+                ", type='" + type + '\'' +
+                ", uri='" + uri + '\'' +
+                '}';
+    }
 }

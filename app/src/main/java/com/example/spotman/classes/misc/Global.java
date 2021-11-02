@@ -2,8 +2,12 @@ package com.example.spotman.classes.misc;
 
 import android.content.Context;
 
+import com.example.spotman.MainActivity;
 import com.example.spotman.classes.Fact;
+import com.example.spotman.classes.misc.http.AccessToken;
 import com.example.spotman.classes.misc.http.Requester;
+import com.example.spotman.classes.models.root.Profile;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,22 +30,43 @@ public class Global
     public final String REDIRECT_URI = "http://localhost/good";
     public final String[] SCOPES_LIST = new String[] { "user-read-recently-played", "playlist-read-private", "playlist-modify-public", "playlist-modify-private", "ugc-image-upload", "user-library-modify"};
 
+    public AccessToken accessToken;
+
+    Gson gson = new Gson();
 
 
-
-    //end of global fields
     //=======================================================================
+    //models
+
+    public Profile selectedProfile;
+
+    public void setProfile(String profileJson)
+    {
+        selectedProfile = gson.fromJson(profileJson, Profile.class);
+
+        MainActivity.log.log("Profile set successfully! \n\t " + selectedProfile.toString(), "data");
+    }
+
+
+
+
 
 
     //constructor
     public Global()
     {
+
     }
 
 
     public void initRequester(Context context)
     {
         requester = new Requester(context);
+    }
+
+    public void initAccessToken()
+    {
+        accessToken = new AccessToken();
     }
 
 }

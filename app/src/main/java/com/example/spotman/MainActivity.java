@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity
 
         global.initRequester(this);
         global.mainContext = this;
+
     //==================================================================
 
     }

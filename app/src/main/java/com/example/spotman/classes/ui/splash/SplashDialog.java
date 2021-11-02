@@ -72,7 +72,14 @@ public class SplashDialog extends DialogFragment
             }
         });
 
-
+        binding.btnSplashDialogForget.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                MainActivity.global.accessToken.resetAccessToken(getContext());
+            }
+        });
 
 
         //return binding view
