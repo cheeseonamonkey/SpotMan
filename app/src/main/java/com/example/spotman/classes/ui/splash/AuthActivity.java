@@ -76,6 +76,8 @@ public class AuthActivity extends AppCompatActivity
 
 
 
+                    this.finish();
+
 
                     break;
 

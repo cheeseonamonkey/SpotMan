@@ -17,6 +17,7 @@ public class Global
 
     public Requester requester;
 
+    //set in main activity once it is initialized
     public Context mainContext;
 
     //authorization:
