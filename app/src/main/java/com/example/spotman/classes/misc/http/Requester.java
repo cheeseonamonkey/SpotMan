@@ -8,6 +8,7 @@ import com.example.spotman.MainActivity;
 import com.example.spotman.classes.Fact;
 import com.example.spotman.classes.misc.Global;
 import com.example.spotman.classes.misc.MyLogger;
+import com.example.spotman.classes.models.Settable;
 import com.example.spotman.classes.models.root.Profile;
 import com.google.gson.Gson;
 
@@ -100,13 +101,10 @@ public class Requester
     //=======================================================================
     //GET(async):
 
-    public void GetAsync(String urlPath, String authCode, Context context, Global dataStore)
+    public void GetAndSetAsync(String urlPath, Settable outObj)
     {
 
-        String strOut;
-
-
-        //start request
+       //start request
         Request request = MakeRequest(urlPath);
 
         //enqueue the request and implement callbacks:
@@ -145,18 +143,14 @@ public class Requester
 
 
                 //we cannot assign directly to to the main thread,
-                //but we can work with an existing collection, or use an existing var's setters:
-                        //MainActivity.global.factList.add(factReturn);
+                //but we can work with an existing collections/objects:
 
-                //or we can run on the UI thread:
-                    /*
-                    */
-                    //=======================================================================
-                    //      YOU ARE HERE
-                    // =======================================================================
+                //or we can run on the UI thread?
 
-                    dataStore.setSelectedProfile(strJson);
 
+
+                    //output
+                    outObj.setFromJson(strJson);
 
 
 

@@ -1,6 +1,10 @@
 package com.example.spotman.classes.models.root;
 
-public class TrackFeatures
+import com.example.spotman.classes.models.Settable;
+
+import kotlin.NotImplementedError;
+
+public class TrackFeatures  implements Settable
 {
 
     public TrackFeatures()
@@ -25,4 +29,10 @@ public class TrackFeatures
     private String analysis_url;
     private int duration_ms;
     private int time_signature;
+
+    @Override
+    public void setFromJson(String json)
+    {
+        throw new NotImplementedError();
+    }
 }

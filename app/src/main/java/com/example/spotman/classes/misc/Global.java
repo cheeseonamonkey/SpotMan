@@ -2,15 +2,10 @@ package com.example.spotman.classes.misc;
 
 import android.content.Context;
 
-import com.example.spotman.MainActivity;
-import com.example.spotman.classes.Fact;
 import com.example.spotman.classes.misc.http.AccessToken;
 import com.example.spotman.classes.misc.http.Requester;
 import com.example.spotman.classes.models.root.Profile;
 import com.google.gson.Gson;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Global
 {
@@ -32,19 +27,24 @@ public class Global
 
     public AccessToken accessToken;
 
-    Gson gson = new Gson();
+    public Gson gson = new Gson();
 
 
     //=======================================================================
     //models
 
-    public Profile selectedProfile;
+    public Profile myProfile = new Profile();
+    public Profile selectedProfile = new Profile();
 
-    public void setSelectedProfile(String json)
+/*    public void setSelectedProfile(String json)
     {
-        selectedProfile = Profile.fromJson(gson, json);
-
+        selectedProfile = Profile.newFromJson(json);
     }
+
+    public void setMyProfile(String json)
+    {
+        myProfile = Profile.newFromJson(json);
+    }*/
 
 
 

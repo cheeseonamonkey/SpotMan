@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.spotman.MainActivity;
+import com.example.spotman.classes.misc.Global;
 import com.example.spotman.classes.models.root.Profile;
 import com.example.spotman.classes.ui.splash.SplashDialog;
 import com.example.spotman.databinding.FragmentHomeBinding;
@@ -21,6 +22,7 @@ public class HomeFragment extends Fragment
     private FragmentHomeBinding binding;
 
 
+    Global global;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState)
@@ -37,6 +39,7 @@ public class HomeFragment extends Fragment
         //after init stuff:
 
 
+        global = MainActivity.global;
         //
 
 
@@ -66,7 +69,7 @@ public class HomeFragment extends Fragment
             @Override
             public void onClick(View view)
             {
-                MainActivity.global.requester.GetAsync("me", MainActivity.global.accessToken.access_token , getContext(), MainActivity.global);
+                global.requester.GetAndSetAsync("me", global.myProfile);
 
 
 

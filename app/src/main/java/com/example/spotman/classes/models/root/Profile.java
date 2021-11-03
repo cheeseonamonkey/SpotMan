@@ -1,5 +1,7 @@
 package com.example.spotman.classes.models.root;
 
+import com.example.spotman.MainActivity;
+import com.example.spotman.classes.models.Settable;
 import com.example.spotman.classes.models.subObjects.ExternalUrls;
 import com.example.spotman.classes.models.subObjects.Followers;
 import com.example.spotman.classes.models.subObjects.Image;
@@ -7,7 +9,7 @@ import com.google.gson.Gson;
 
 import java.util.List;
 
-public class Profile
+public class Profile implements Settable
 {
     public Profile()
     {
@@ -37,8 +39,26 @@ public class Profile
                 '}';
     }
 
-    public static Profile fromJson(Gson gson, String strJson)
+    public static Profile newFromJson(String strJson)
     {
+        Gson gson = MainActivity.global.gson;
         return gson.fromJson(strJson, Profile.class);
+    }
+
+
+    @Override
+    public void setFromJson(String json)
+    {
+
+        Profile p = newFromJson(json);
+
+        this.display_name = p.display_name;
+        this.external_urls = p.external_urls;
+        this.followers = p.followers;
+        this.href = p.href;
+        this.id = p.id;
+        this.images = p.images;
+        this.type = p.type;
+        this.uri = p.uri;
     }
 }
