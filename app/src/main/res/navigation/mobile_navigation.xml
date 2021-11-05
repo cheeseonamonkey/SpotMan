@@ -7,19 +7,24 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.spotman.classes.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:name="com.example.spotman.classes.ui.me.MeFragment"
+        android:label="Me"
+        tools:layout="@layout/fragment_me" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.spotman.classes.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_profiles"
+        android:name="com.example.spotman.classes.ui.profiles.ProfilesFragment"
+        android:label="Profiles"
+        tools:layout="@layout/profile_fragment" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.spotman.classes.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_misc"
+        android:name="com.example.spotman.classes.ui.misc.MiscFragment"
+        android:label="Misc"
+        tools:layout="@layout/misc_fragment" />
+    <fragment
+        android:id="@+id/navigation_playlists"
+        android:name="com.example.spotman.classes.ui.playlists.PlaylistsFragment"
+        android:label="Playlists"
+        tools:layout="@layout/playlists_fragment" />
 </navigation>

@@ -5,6 +5,7 @@ import android.content.Context;
 import com.example.spotman.classes.misc.http.AccessToken;
 import com.example.spotman.classes.misc.http.Requester;
 import com.example.spotman.classes.models.root.Profile;
+import com.example.spotman.classes.models.root.RecentlyPlayed;
 import com.google.gson.Gson;
 
 public class Global
@@ -25,16 +26,25 @@ public class Global
     public final String REDIRECT_URI = "http://localhost/good";
     public final String[] SCOPES_LIST = new String[] { "user-read-recently-played", "playlist-read-private", "playlist-modify-public", "playlist-modify-private", "ugc-image-upload", "user-library-modify"};
 
+
+
     public AccessToken accessToken;
+    public boolean authenticated = false;
 
     public Gson gson = new Gson();
 
 
     //=======================================================================
-    //models
 
+    //models
     public Profile myProfile = new Profile();
+    public RecentlyPlayed myRecentlyPlayed = new RecentlyPlayed();
+
     public Profile selectedProfile = new Profile();
+    public RecentlyPlayed selectedProfileRecentlyPlayed = new RecentlyPlayed();
+
+
+    //========
 
 /*    public void setSelectedProfile(String json)
     {

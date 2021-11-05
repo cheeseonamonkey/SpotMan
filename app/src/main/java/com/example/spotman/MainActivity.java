@@ -4,20 +4,15 @@ import android.os.Bundle;
 
 import com.example.spotman.classes.misc.Global;
 import com.example.spotman.classes.misc.MyLogger;
-import com.example.spotman.classes.misc.http.Requester;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.spotman.databinding.ActivityMainBinding;
-import com.spotify.sdk.android.auth.app.SpotifyAuthHandler;
-
-import java.util.concurrent.Executor;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -63,7 +58,7 @@ public class MainActivity extends AppCompatActivity
         // passing each menu ID as a set of Ids
 
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
+                R.id.navigation_home, R.id.navigation_profiles, R.id.navigation_misc)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);

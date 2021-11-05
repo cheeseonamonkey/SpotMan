@@ -28,4 +28,60 @@ public class Track
     private int track_number;
     private String type;
     private String uri;
+
+
+    public List<Artist> getArtists()
+    {
+        return artists;
+    }
+
+    public ExternalIds getExternal_ids()
+    {
+        return external_ids;
+    }
+
+    public ExternalUrls getExternal_urls()
+    {
+        return external_urls;
+    }
+
+    public String getHref()
+    {
+        return href;
+    }
+
+    public String getId()
+    {
+        return id;
+    }
+
+    public String getName()
+    {
+        return name;
+    }
+
+    public int getPopularity()
+    {
+        return popularity;
+    }
+
+    public boolean isTrack()
+    {
+        return track;
+    }
+
+    public int getTrack_number()
+    {
+        return track_number;
+    }
+
+    public String getType()
+    {
+        return type;
+    }
+
+    public String getUri()
+    {
+        return uri;
+    }
 }

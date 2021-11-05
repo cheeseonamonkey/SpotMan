@@ -8,4 +8,29 @@ public class Artist
     private String name;
     private String type;
     private String uri;
+
+    public ExternalUrls getExternal_urls()
+    {
+        return external_urls;
+    }
+
+    public String getHref()
+    {
+        return href;
+    }
+
+    public String getId()
+    {
+        return id;
+    }
+
+    public String getName()
+    {
+        return name;
+    }
+
+    public String getUri()
+    {
+        return uri;
+    }
 }

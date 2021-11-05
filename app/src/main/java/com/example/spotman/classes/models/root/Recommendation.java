@@ -1,6 +1,6 @@
 package com.example.spotman.classes.models.root;
 
-import com.example.spotman.classes.models.Settable;
+import com.example.spotman.classes.models.SettableModel;
 import com.example.spotman.classes.models.subObjects.Seed;
 import com.example.spotman.classes.models.subObjects.Track;
 
@@ -8,7 +8,7 @@ import java.util.List;
 
 import kotlin.NotImplementedError;
 
-public class Recommendation  implements Settable
+public class Recommendation  implements SettableModel
 {
     public Recommendation()
     {

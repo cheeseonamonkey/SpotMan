@@ -28,10 +28,10 @@ public class Item
     private String uri;
 
     //track items
-
-    //todo: still using this datetime class from C#
-  //  private DateTime added_at;
+    //todo: still using this datetime class from C#:
+  /*  private DateTime added_at;  */
     private AddedBy added_by;
+
     private boolean is_local;
     private Track track;
     private VideoThumbnail video_thumbnail;
@@ -42,5 +42,8 @@ public class Item
  //   private DateTime played_at;
     private SpotifyContext context;     //todo: wacky DateTime class here also
 
-
+    public Track getTrack()
+    {
+        return track;
+    }
 }

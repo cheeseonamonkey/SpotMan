@@ -3,16 +3,21 @@
 
     <item
         android:id="@+id/navigation_home"
-        android:icon="@drawable/ic_home_black_24dp"
-        android:title="@string/title_home" />
+        android:icon="@drawable/meicon"
+        android:title="Me" />
 
     <item
-        android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_dashboard" />
+        android:id="@+id/navigation_profiles"
+        android:icon="@drawable/profileicon"
+        android:title="Profiles" />
 
     <item
-        android:id="@+id/navigation_notifications"
-        android:title="@string/title_notifications" />
+        android:id="@+id/navigation_playlists"
+        android:icon="@drawable/playlisticon"
+        android:title="Playlists" />
+    <item
+        android:id="@+id/navigation_misc"
+        android:icon="@drawable/settingsicon"
+        android:title="Misc" />
 
 </menu>

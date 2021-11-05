@@ -79,6 +79,8 @@ public class AuthActivity extends AppCompatActivity
                     MainActivity.global.accessToken.expires_in = authResponse.getExpiresIn();
                     MainActivity.global.accessToken.token_type = authResponse.getType().name();
 
+                    MainActivity.global.authenticated = true;
+
                     this.finish();
 
 

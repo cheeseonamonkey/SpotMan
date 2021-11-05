@@ -5,19 +5,13 @@ import android.content.Context;
 import androidx.annotation.NonNull;
 
 import com.example.spotman.MainActivity;
-import com.example.spotman.classes.Fact;
-import com.example.spotman.classes.misc.Global;
 import com.example.spotman.classes.misc.MyLogger;
-import com.example.spotman.classes.models.Settable;
-import com.example.spotman.classes.models.root.Profile;
-import com.google.gson.Gson;
+import com.example.spotman.classes.models.SettableModel;
 
 import java.io.IOException;
-import java.util.concurrent.Executor;
 
 import okhttp3.Call;
 import okhttp3.Callback;
-import okhttp3.Headers;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -101,7 +95,7 @@ public class Requester
     //=======================================================================
     //GET(async):
 
-    public void GetAndSetAsync(String urlPath, Settable outObj)
+    public void GetAndSetAsync(String urlPath, SettableModel outObj)
     {
 
        //start request

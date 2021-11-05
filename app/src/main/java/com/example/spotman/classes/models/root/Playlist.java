@@ -1,7 +1,7 @@
 package com.example.spotman.classes.models.root;
 
 import com.example.spotman.MainActivity;
-import com.example.spotman.classes.models.Settable;
+import com.example.spotman.classes.models.SettableModel;
 import com.example.spotman.classes.models.subObjects.ExternalUrls;
 import com.example.spotman.classes.models.subObjects.Followers;
 import com.example.spotman.classes.models.subObjects.Image;
@@ -10,7 +10,7 @@ import com.example.spotman.classes.models.subObjects.Tracks;
 
 import java.util.List;
 
-public class Playlist implements Settable
+public class Playlist implements SettableModel
 {
     public Playlist()
     {
@@ -31,6 +31,28 @@ public class Playlist implements Settable
     private Tracks tracks;
     private String type;
     private String uri;
+
+    @Override
+    public String toString()
+    {
+        return "Playlist{" +
+                "collaborative=" + collaborative +
+                ", description='" + description + '\'' +
+                ", external_urls=" + external_urls +
+                ", followers=" + followers +
+                ", href='" + href + '\'' +
+                ", id='" + id + '\'' +
+                ", images=" + images +
+                ", name='" + name + '\'' +
+                ", owner=" + owner +
+                ", primary_color=" + primary_color +
+                ", isPrivate=" + isPrivate +
+                ", snapshot_id='" + snapshot_id + '\'' +
+                ", tracks=" + tracks +
+                ", type='" + type + '\'' +
+                ", uri='" + uri + '\'' +
+                '}';
+    }
 
     @Override
     public void setFromJson(String json)

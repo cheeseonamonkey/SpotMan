@@ -28,6 +28,8 @@ public class AccessToken
     public void resetAccessToken(Context context)
     {
 
+        MainActivity.global.authenticated = false;
+
        // Globals.Connected = false;
         access_token = "";
 
@@ -38,10 +40,14 @@ public class AccessToken
 
     public void setAccess_token(String token)
     {
+        MainActivity.global.authenticated = true;
+
+
         access_token = token;
     }
     public void setAccessToken(String token, String token_type, long expires_in)
     {
+        MainActivity.global.authenticated = true;
 
         access_token = token;
         this.token_type = token_type;
