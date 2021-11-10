@@ -9,7 +9,8 @@ public class Item
     }
 
 
-//could abstract this
+//could abstract this much better
+//=======================================================================
 
     //playlist items
     private boolean collaborative;
@@ -36,11 +37,13 @@ public class Item
     private Track track;
     private VideoThumbnail video_thumbnail;
 
+
+
+
     //recently played items
 
-
- //   private DateTime played_at;
  //todo: C# DateTime class here also
+    //   private DateTime played_at;
 
     private SpotifyContext context;
 

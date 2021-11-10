@@ -3,13 +3,14 @@ package com.example.spotman.classes.models.root;
 import com.example.spotman.MainActivity;
 import com.example.spotman.classes.models.SettableModel;
 import com.example.spotman.classes.models.subObjects.Item;
+import com.example.spotman.classes.models.subObjects.Track;
 import com.google.gson.Gson;
 
 import java.util.List;
 
 public class TopTracks implements SettableModel
 {
-    public List<Item> items;
+    public List<Track> items;
     public int total;
     public int limit;
     public int offset;
@@ -47,12 +48,8 @@ public class TopTracks implements SettableModel
 
     }
 
-    //=======================================================================
-    //ISSUE IS HERE:
-    //if you check the json in postman you can see that the items are nested slightly differently in recents / tops
-    //can fix probably with a type check
 
-    public List<Item> getItems()
+    public List<Track> getTracklist()
     {
         return items;
     }

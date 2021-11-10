@@ -7,7 +7,9 @@ import com.example.spotman.MainActivity;
 import com.example.spotman.classes.models.SettableModel;
 import com.example.spotman.classes.models.subObjects.Cursors;
 import com.example.spotman.classes.models.subObjects.Item;
+import com.example.spotman.classes.models.subObjects.Track;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RecentlyPlayed implements SettableModel
@@ -58,23 +60,17 @@ public class RecentlyPlayed implements SettableModel
     }
 
 
-/*
-    public static LinearLayout buildListItem(RecentlyPlayed recentlyPlayed, Context context)
+
+
+    public List<Track> getTracklist()
     {
-        LinearLayout linRoot = new LinearLayout(context);
+        List<Track> trackList = new ArrayList<>();
 
-        return linRoot;
+        for(Item i : items)
+        {
+            trackList.add(i.getTrack());
+        }
 
-    }
-*/
-
-    //=======================================================================
-    //ISSUE IS HERE:
-    //if you check the json in postman you can see that the items are nested slightly differently in recents / tops
-    //can fix probably with a type check
-    //=======================================================================
-    public List<Item> getItems()
-    {
-        return items;
+        return trackList;
     }
 }

@@ -17,6 +17,7 @@ import com.example.spotman.classes.models.SettableModel;
 import com.example.spotman.classes.models.root.RecentlyPlayed;
 import com.example.spotman.classes.models.root.TopTracks;
 import com.example.spotman.classes.models.subObjects.Item;
+import com.example.spotman.classes.models.subObjects.Track;
 
 import java.util.List;
 
@@ -24,7 +25,7 @@ public class RecycAdapter_RecentsTops extends RecyclerView.Adapter<RecycAdapter_
 {
     //reference fields
   //  RecentlyPlayed recentlyPlayed;
-    List<Item> itemList;
+    List<Track> itemList;
     Context context;
 
 
@@ -39,13 +40,14 @@ public class RecycAdapter_RecentsTops extends RecyclerView.Adapter<RecycAdapter_
         {
             RecentlyPlayed rplay = (RecentlyPlayed) rootModelWithTrackList;
 
-            itemList = rplay.getItems();
+
+            itemList = rplay.getTracklist();
 
         }else if (rootModelWithTrackList instanceof TopTracks)
         {
             TopTracks topt = (TopTracks) rootModelWithTrackList;
 
-            itemList = topt.getItems();
+            itemList = topt.getTracklist();
 
         }
 
@@ -78,8 +80,8 @@ public class RecycAdapter_RecentsTops extends RecyclerView.Adapter<RecycAdapter_
 
         //set image too:
         //holder.imageProductImage;
-        holder.txtArtist.setText(itemList.get(position).getTrack().getArtists().get(0).getName());
-        holder.txtTrack.setText(itemList.get(position).getTrack().getName());
+        holder.txtArtist.setText(itemList.get(position).getArtists().get(0).getName());
+        holder.txtTrack.setText(itemList.get(position).getName());
 
         //might need to make this not anonymous later?
         holder.ckbHeart.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()

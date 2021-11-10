@@ -75,7 +75,6 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@drawable/hearticon"
-                android:backgroundTint="#80FFFFFF"
                 android:button="@drawable/emptyimg"
                 android:checked="false"
                 android:minWidth="0dp"
