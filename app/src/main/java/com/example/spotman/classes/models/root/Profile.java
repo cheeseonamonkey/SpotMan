@@ -51,6 +51,12 @@ public class Profile implements SettableModel
 
 
     @Override
+    public void setLoaded(boolean isLoaded)
+    {
+
+    }
+
+    @Override
     public void setFromJson(String json)
     {
         Profile p = newFromJson(json);

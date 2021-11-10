@@ -4,5 +4,5 @@ import androidx.lifecycle.ViewModel;
 
 public class MiscViewModel extends ViewModel
 {
-    // TODO: Implement the ViewModel
+
 }

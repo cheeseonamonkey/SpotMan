@@ -8,15 +8,11 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentContainerView;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.spotman.MainActivity;
-import com.example.spotman.R;
 import com.example.spotman.classes.misc.Global;
 import com.example.spotman.classes.ui.profiles.profileSubView.ProfileSubViewFragment;
-import com.example.spotman.classes.ui.splash.SplashDialog;
 import com.example.spotman.databinding.FragmentMeBinding;
 
 import java.util.List;
@@ -132,7 +128,10 @@ binding.btnLoadMe.setOnClickListener(new View.OnClickListener()
             ProfileSubViewFragment profileSubViewFrag = (ProfileSubViewFragment)  fgs.get(0);
             MainActivity.log.log(profileSubViewFrag.toString());
 
-            profileSubViewFrag.load(global.myProfile);
+
+            profileSubViewFrag.loadSubView(global.myProfile);
+            profileSubViewFrag.loadSubView(global.myRecentlyPlayed);
+            profileSubViewFrag.loadSubView(global.myTopTracks);
 
 
     }

@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,15 +13,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.spotman.R;
+import com.example.spotman.classes.models.SettableModel;
 import com.example.spotman.classes.models.root.RecentlyPlayed;
+import com.example.spotman.classes.models.root.TopTracks;
 import com.example.spotman.classes.models.subObjects.Item;
 
 import java.util.List;
 
-public class RecycRecentAdapter extends RecyclerView.Adapter<RecycRecentAdapter.TrackSimpleViewHolder>
+public class RecycAdapter_RecentsTops extends RecyclerView.Adapter<RecycAdapter_RecentsTops.TrackSimpleViewHolder>
 {
     //reference fields
-    RecentlyPlayed recentlyPlayed;
+  //  RecentlyPlayed recentlyPlayed;
     List<Item> itemList;
     Context context;
 
@@ -29,10 +33,22 @@ public class RecycRecentAdapter extends RecyclerView.Adapter<RecycRecentAdapter.
             // We’ll also override imageView onClick method to display a toast saying which item is selected.
     //getItemCount() – returns the numbers of items/rows in the list.
 
-    public RecycRecentAdapter(RecentlyPlayed rplay, Context context)
+    public RecycAdapter_RecentsTops(SettableModel rootModelWithTrackList, Context context)
     {
-        recentlyPlayed = rplay;
-        itemList = rplay.getItems();
+        if(rootModelWithTrackList instanceof RecentlyPlayed)
+        {
+            RecentlyPlayed rplay = (RecentlyPlayed) rootModelWithTrackList;
+
+            itemList = rplay.getItems();
+
+        }else if (rootModelWithTrackList instanceof TopTracks)
+        {
+            TopTracks topt = (TopTracks) rootModelWithTrackList;
+
+            itemList = topt.getItems();
+
+        }
+
 
         this.context = context;
 
@@ -64,6 +80,33 @@ public class RecycRecentAdapter extends RecyclerView.Adapter<RecycRecentAdapter.
         //holder.imageProductImage;
         holder.txtArtist.setText(itemList.get(position).getTrack().getArtists().get(0).getName());
         holder.txtTrack.setText(itemList.get(position).getTrack().getName());
+
+        //might need to make this not anonymous later?
+        holder.ckbHeart.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b)
+            {
+                //checked
+                if(b)
+                {
+                    compoundButton.setBackgroundResource(R.drawable.hearticonchecked);
+
+                    //todo: api post
+
+                }else if
+
+                //not checked
+                (! b)
+                {
+                    compoundButton.setBackgroundResource(R.drawable.hearticon);
+
+                    //todo: api post
+                }
+
+
+            }
+        });
     }
 
 
@@ -86,10 +129,12 @@ public class RecycRecentAdapter extends RecyclerView.Adapter<RecycRecentAdapter.
     public class TrackSimpleViewHolder extends RecyclerView.ViewHolder
     {
 
-        //fields in the view
+        //ui in the view
         ImageView imageProductImage;
         TextView txtTrack;
         TextView txtArtist;
+        CheckBox ckbHeart;
+
 
         //init
         public TrackSimpleViewHolder(View view)
@@ -100,7 +145,7 @@ public class RecycRecentAdapter extends RecyclerView.Adapter<RecycRecentAdapter.
             imageProductImage= view.findViewById(R.id.imgProfilePic);
             txtTrack = view.findViewById(R.id.txtTrackSimpleTitle);
             txtArtist = view.findViewById(R.id.txtTrackSimpleArtist);
-
+            ckbHeart = view.findViewById(R.id.ckbHeartTrack);
         }
     }
 

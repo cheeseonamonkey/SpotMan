@@ -1,8 +1,10 @@
 package com.example.spotman.classes.ui;
 
+import com.example.spotman.classes.models.SettableModel;
+
 public interface LoadableSubView
 {
-    public void unload();
-    public void load(Object toLoad);
+    public void unloadSubView();
+    public void loadSubView(SettableModel toLoad);
 
 }

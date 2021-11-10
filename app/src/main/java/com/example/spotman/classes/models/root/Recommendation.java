@@ -18,6 +18,12 @@ public class Recommendation  implements SettableModel
     private List<Seed> seeds;
 
     @Override
+    public void setLoaded(boolean isLoaded)
+    {
+
+    }
+
+    @Override
     public void setFromJson(String json)
     {
         throw new NotImplementedError();

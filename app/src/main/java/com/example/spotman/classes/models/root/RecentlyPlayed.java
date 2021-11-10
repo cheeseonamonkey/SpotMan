@@ -35,6 +35,12 @@ public class RecentlyPlayed implements SettableModel
     }
 
     @Override
+    public void setLoaded(boolean isLoaded)
+    {
+
+    }
+
+    @Override
     public void setFromJson(String json)
     {
         RecentlyPlayed rp = MainActivity.global.gson.fromJson(json, RecentlyPlayed.class);
@@ -62,6 +68,11 @@ public class RecentlyPlayed implements SettableModel
     }
 */
 
+    //=======================================================================
+    //ISSUE IS HERE:
+    //if you check the json in postman you can see that the items are nested slightly differently in recents / tops
+    //can fix probably with a type check
+    //=======================================================================
     public List<Item> getItems()
     {
         return items;

@@ -55,6 +55,12 @@ public class Playlist implements SettableModel
     }
 
     @Override
+    public void setLoaded(boolean isLoaded)
+    {
+
+    }
+
+    @Override
     public void setFromJson(String json)
     {
         Playlist p = MainActivity.global.gson.fromJson(json, Playlist.class);

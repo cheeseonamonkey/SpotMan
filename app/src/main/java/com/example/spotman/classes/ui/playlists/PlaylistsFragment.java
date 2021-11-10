@@ -58,7 +58,7 @@ public class PlaylistsFragment extends Fragment
     {
         super.onActivityCreated(savedInstanceState);
         mViewModel = new ViewModelProvider(this).get(PlaylistsViewModel.class);
-        // TODO: Use the ViewModel
+
     }
 
 }

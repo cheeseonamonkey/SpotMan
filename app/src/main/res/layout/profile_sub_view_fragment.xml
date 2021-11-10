@@ -88,6 +88,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linProfileBottomSection"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="2dp"
@@ -95,35 +96,90 @@
         android:padding="4dp">
 
         <LinearLayout
-            android:id="@+id/linProfileRecentsSection"
+            android:id="@+id/linRecentsLblBar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:layout_height="35dp"
+            android:layout_margin="2dp"
+            android:background="#1AAF645F"
+            android:orientation="horizontal"
+            android:padding="2dp">
 
             <TextView
                 android:id="@+id/lblrecents"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Recents:" />
+                android:text="Recents:"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="55dp"
+                android:layout_height="match_parent" />
+
+            <CheckBox
+                android:id="@+id/ckbRecentsExpand"
+                android:layout_width="45dp"
+                android:layout_height="35dp"
+                android:background="@drawable/caretdownicon"
+                android:button="@drawable/emptyimg"
+                android:checked="true" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/frmRecycRecentHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycRecent"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
-
-        </LinearLayout>
+        </FrameLayout>
 
         <LinearLayout
-            android:id="@+id/linProfileTopSection"
+            android:id="@+id/linTopsLblBar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:layout_height="35dp"
+            android:layout_margin="2dp"
+            android:background="#1AAF645F"
+            android:orientation="horizontal"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/lblTops"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Top:"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="55dp"
+                android:layout_height="match_parent" />
+
+            <CheckBox
+                android:id="@+id/ckbTopsExpand"
+                android:layout_width="45dp"
+                android:layout_height="35dp"
+                android:background="@drawable/caretdownicon"
+                android:button="@drawable/emptyimg"
+                android:checked="true" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/frmRecycTopsHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycTop"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
-        </LinearLayout>
+        </FrameLayout>
+
     </LinearLayout>
 </LinearLayout>

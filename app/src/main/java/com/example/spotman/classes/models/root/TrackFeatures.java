@@ -31,6 +31,12 @@ public class TrackFeatures  implements SettableModel
     private int time_signature;
 
     @Override
+    public void setLoaded(boolean isLoaded)
+    {
+
+    }
+
+    @Override
     public void setFromJson(String json)
     {
         throw new NotImplementedError();

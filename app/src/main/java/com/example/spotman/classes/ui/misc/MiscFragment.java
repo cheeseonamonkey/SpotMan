@@ -74,6 +74,7 @@ binding.btnGetMe.setOnClickListener(new View.OnClickListener()
         global.requester.GetAndSetAsync("me", global.myProfile);
         global.requester.GetAndSetAsync("me/player/recently-played", global.myRecentlyPlayed);
 
+        global.requester.GetAndSetAsync("me/top/tracks", global.myTopTracks);
 
     }
 });
@@ -92,7 +93,7 @@ binding.btnGetMe.setOnClickListener(new View.OnClickListener()
     {
         super.onActivityCreated(savedInstanceState);
         mViewModel = new ViewModelProvider(this).get(MiscViewModel.class);
-        // TODO: Use the ViewModel
+
     }
 
 }
