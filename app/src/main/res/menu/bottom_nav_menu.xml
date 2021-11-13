@@ -16,6 +16,10 @@
         android:icon="@drawable/playlisticon"
         android:title="Playlists" />
     <item
+        android:id="@+id/navigation_track"
+        android:icon="@drawable/trackicon"
+        android:title="Track" />
+    <item
         android:id="@+id/navigation_misc"
         android:icon="@drawable/settingsicon"
         android:title="Misc" />

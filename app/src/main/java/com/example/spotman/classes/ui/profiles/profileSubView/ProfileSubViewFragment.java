@@ -22,7 +22,7 @@ import android.widget.TextView;
 import com.example.spotman.MainActivity;
 import com.example.spotman.R;
 import com.example.spotman.classes.misc.Global;
-import com.example.spotman.classes.models.SettableModel;
+import com.example.spotman.classes.models.Settable;
 import com.example.spotman.classes.models.root.Profile;
 import com.example.spotman.classes.models.root.RecentlyPlayed;
 import com.example.spotman.classes.models.root.TopTracks;
@@ -185,14 +185,12 @@ public class ProfileSubViewFragment extends Fragment implements LoadableSubView
 
     //subview
     @Override
-    public void loadSubView(SettableModel toLoad)
+    public void loadSubView(Settable toLoad)
     {
 
         if(toLoad instanceof Profile)
         {
             Profile profile = (Profile) toLoad;
-
-            // MainActivity.log.log("Profile loading: " + toLoad.toString());
 
 
             //write to UI:
@@ -202,7 +200,11 @@ public class ProfileSubViewFragment extends Fragment implements LoadableSubView
 
         }else if(toLoad instanceof RecentlyPlayed)
         {
+
             RecentlyPlayed recents = (RecentlyPlayed) toLoad;
+
+
+
 
             RecyclerView recycRecents = binding.recycRecent;
             //layout manager tells it how to behave as a list
@@ -210,6 +212,7 @@ public class ProfileSubViewFragment extends Fragment implements LoadableSubView
 
             //fill in the constructor
             recycAdapterRecents = new RecycAdapter_RecentsTops(recents, getContext());
+
 
             //set adapter
             recycRecents.setAdapter(recycAdapterRecents);

@@ -48,9 +48,9 @@ public class MeFragment extends Fragment
 
 
 
-    //MainActivity.log.log(global.toString());
-    //MainActivity.log.log(global.myProfile.toString());
-    //MainActivity.log.log(global.myRecentlyPlayed.toString());
+        //MainActivity.log.log(global.toString());
+        //MainActivity.log.log(global.myProfile.toString());
+        //MainActivity.log.log(global.myRecentlyPlayed.toString());
 
         //=======================================================================
         //to load instead of using the stupid button:
@@ -77,14 +77,14 @@ public class MeFragment extends Fragment
 //=======================================================================
         //LISTENERS:
 
-binding.btnLoadMe.setOnClickListener(new View.OnClickListener()
-{
-    @Override
-    public void onClick(View view)
-    {
-        LoadTab();
-    }
-});
+        binding.btnLoadMe.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                LoadTab();
+            }
+        });
 
 
 //end of listeners
@@ -113,25 +113,28 @@ binding.btnLoadMe.setOnClickListener(new View.OnClickListener()
 
     public void LoadTab()
     {
+        //
+        //done here to stay synchronous:
+        global.myRecentlyPlayed.setHeartedList();
+        global.myTopTracks.setHeartedList();
+        //
+
         FragmentContainerView fragHolder = binding.fragHolderMeProfileSubView;
-        //
-        //
-        //=======================================================================
-        //you are here!
-        //=======================================================================
 
-        //    MainActivity.log.log("Authenticated = "   + global.authenticated + "myProfile set = " + global.myProfile.isLoaded);
+        List<Fragment> fgs = getChildFragmentManager().getFragments();
+
+        ProfileSubViewFragment profileSubViewFrag = (ProfileSubViewFragment)  fgs.get(0);
 
 
-            List<Fragment> fgs = getChildFragmentManager().getFragments();
 
-            ProfileSubViewFragment profileSubViewFrag = (ProfileSubViewFragment)  fgs.get(0);
-            MainActivity.log.log(profileSubViewFrag.toString());
+        profileSubViewFrag.loadSubView(global.myProfile);
+        profileSubViewFrag.loadSubView(global.myRecentlyPlayed);
+        profileSubViewFrag.loadSubView(global.myTopTracks);
 
 
-            profileSubViewFrag.loadSubView(global.myProfile);
-            profileSubViewFrag.loadSubView(global.myRecentlyPlayed);
-            profileSubViewFrag.loadSubView(global.myTopTracks);
+
+
+
 
 
     }

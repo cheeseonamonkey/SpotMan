@@ -21,5 +21,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Get Me" />
+
+        <Button
+            android:id="@+id/btnGetLog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Get log" />
     </LinearLayout>
 </FrameLayout>

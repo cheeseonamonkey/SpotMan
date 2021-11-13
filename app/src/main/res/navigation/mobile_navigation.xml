@@ -18,13 +18,18 @@
         tools:layout="@layout/profile_fragment" />
 
     <fragment
-        android:id="@+id/navigation_misc"
-        android:name="com.example.spotman.classes.ui.misc.MiscFragment"
-        android:label="Misc"
-        tools:layout="@layout/misc_fragment" />
-    <fragment
         android:id="@+id/navigation_playlists"
         android:name="com.example.spotman.classes.ui.playlists.PlaylistsFragment"
         android:label="Playlists"
         tools:layout="@layout/playlists_fragment" />
+    <fragment
+        android:id="@+id/navigation_track"
+        android:name="com.example.spotman.classes.ui.track.TrackFragment"
+        android:label="Track"
+        tools:layout="@layout/track_fragment" />
+    <fragment
+        android:id="@+id/navigation_misc"
+        android:name="com.example.spotman.classes.ui.misc.MiscFragment"
+        android:label="Misc"
+        tools:layout="@layout/misc_fragment" />
 </navigation>

@@ -1,10 +1,10 @@
 package com.example.spotman.classes.models.root;
 
-import com.example.spotman.classes.models.SettableModel;
+import com.example.spotman.classes.models.Settable;
 
 import kotlin.NotImplementedError;
 
-public class TrackFeatures  implements SettableModel
+public class TrackFeatures  implements Settable
 {
 
     public TrackFeatures()

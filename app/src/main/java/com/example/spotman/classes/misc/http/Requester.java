@@ -6,7 +6,7 @@ import androidx.annotation.NonNull;
 
 import com.example.spotman.MainActivity;
 import com.example.spotman.classes.misc.MyLogger;
-import com.example.spotman.classes.models.SettableModel;
+import com.example.spotman.classes.models.Settable;
 
 import java.io.IOException;
 
@@ -95,7 +95,7 @@ public class Requester
     //=======================================================================
     //GET(async):
 
-    public void GetAndSetAsync(String urlPath, SettableModel outObj)
+    public void GetAndSetAsync(String urlPath, Settable outObj)
     {
 
        //start request
@@ -145,6 +145,8 @@ public class Requester
 
                     //output
                     outObj.setFromJson(strJson);
+
+
 
 
 

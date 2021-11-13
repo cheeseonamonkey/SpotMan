@@ -1,12 +1,12 @@
 package com.example.spotman.classes.models.root;
 
 import com.example.spotman.MainActivity;
-import com.example.spotman.classes.models.SettableModel;
+import com.example.spotman.classes.models.Settable;
 import com.example.spotman.classes.models.subObjects.Item;
 
 import java.util.List;
 
-public class PlaylistList  implements SettableModel
+public class PlaylistList  implements Settable
 {
     public PlaylistList()
     {
@@ -17,7 +17,7 @@ public class PlaylistList  implements SettableModel
     private int limit;
     private String next;
     private int offset;
-    private Object previous;
+    private java.lang.Object previous;
     private int total;
 
     @Override

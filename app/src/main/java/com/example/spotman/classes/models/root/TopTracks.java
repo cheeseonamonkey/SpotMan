@@ -1,14 +1,14 @@
 package com.example.spotman.classes.models.root;
 
 import com.example.spotman.MainActivity;
-import com.example.spotman.classes.models.SettableModel;
-import com.example.spotman.classes.models.subObjects.Item;
+import com.example.spotman.classes.models.HeartedList;
+import com.example.spotman.classes.models.Settable;
 import com.example.spotman.classes.models.subObjects.Track;
 import com.google.gson.Gson;
 
 import java.util.List;
 
-public class TopTracks implements SettableModel
+public class TopTracks implements Settable
 {
     public List<Track> items;
     public int total;
@@ -19,6 +19,32 @@ public class TopTracks implements SettableModel
     public String next;
 
     public boolean isLoaded;
+
+
+
+    HeartedList heartedList;
+
+
+
+    public String getTrackIdsString()
+    {
+        String strOut = "";
+
+        if(items != null)
+        {
+            for (Track t : items)
+            {
+                strOut += t.getId() + ",";
+            }
+
+            strOut = strOut.substring(0, strOut.length() - 1);
+
+            return strOut;
+
+        }else
+            return "no IDs set.";
+
+    }
 
 
     @Override
@@ -34,6 +60,8 @@ public class TopTracks implements SettableModel
 
         TopTracks tt = gson.fromJson(json, TopTracks.class);
 
+
+
         items = tt.items;
         total = tt.total;
         limit = tt.limit;
@@ -46,11 +74,28 @@ public class TopTracks implements SettableModel
 
         setLoaded(true);
 
+
+        //on set, gets which songs are hearted - must be done here to stay synchronous
+        heartedList = new HeartedList();
+        MainActivity.global.requester.GetAndSetAsync("me/tracks/contains?ids=" + getTrackIdsString(), heartedList);
+
+
+
     }
 
 
     public List<Track> getTracklist()
     {
         return items;
+    }
+
+    public void setHeartedList()
+    {
+        //sloppy
+        for (int i = 0; i < items.size(); i++)
+        {
+            items.get(i).setHearted(
+                    heartedList.getHeartedList().get(i) );
+        }
     }
 }

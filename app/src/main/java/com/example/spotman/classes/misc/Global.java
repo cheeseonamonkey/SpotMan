@@ -26,7 +26,7 @@ public class Global
     //must match spotify's servers:
     public final String REDIRECT_URI = "http://localhost/good";
     public final String[] SCOPES_LIST = new String[] { "user-read-recently-played", "playlist-read-private", "playlist-modify-public", "playlist-modify-private",
-            "ugc-image-upload", "user-library-modify", "user-top-read"};
+            "ugc-image-upload", "user-library-modify", "user-top-read", "user-library-read"};
 
 
 

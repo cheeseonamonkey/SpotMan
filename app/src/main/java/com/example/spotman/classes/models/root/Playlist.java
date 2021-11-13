@@ -1,7 +1,7 @@
 package com.example.spotman.classes.models.root;
 
 import com.example.spotman.MainActivity;
-import com.example.spotman.classes.models.SettableModel;
+import com.example.spotman.classes.models.Settable;
 import com.example.spotman.classes.models.subObjects.ExternalUrls;
 import com.example.spotman.classes.models.subObjects.Followers;
 import com.example.spotman.classes.models.subObjects.Image;
@@ -10,7 +10,7 @@ import com.example.spotman.classes.models.subObjects.Tracks;
 
 import java.util.List;
 
-public class Playlist implements SettableModel
+public class Playlist implements Settable
 {
     public Playlist()
     {
@@ -25,7 +25,7 @@ public class Playlist implements SettableModel
     private List<Image> images;
     private String name;
     private Owner owner;
-    private Object primary_color;
+    private java.lang.Object primary_color;
     private boolean isPrivate;
     private String snapshot_id;
     private Tracks tracks;

@@ -60,6 +60,8 @@ binding.btnConnectToSpotify.setOnClickListener(new View.OnClickListener()
     public void onClick(View view)
     {
         new SplashDialog().show(getChildFragmentManager(), "splashFragment");
+
+
     }
 });
 
@@ -75,6 +77,8 @@ binding.btnGetMe.setOnClickListener(new View.OnClickListener()
         global.requester.GetAndSetAsync("me/player/recently-played", global.myRecentlyPlayed);
 
         global.requester.GetAndSetAsync("me/top/tracks", global.myTopTracks);
+
+        
 
     }
 });

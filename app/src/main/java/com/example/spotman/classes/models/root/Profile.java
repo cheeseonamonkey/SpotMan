@@ -1,16 +1,13 @@
 package com.example.spotman.classes.models.root;
 
 import com.example.spotman.MainActivity;
-import com.example.spotman.classes.models.SettableModel;
+import com.example.spotman.classes.models.Settable;
 import com.example.spotman.classes.models.subObjects.ExternalUrls;
 import com.example.spotman.classes.models.subObjects.Followers;
 import com.example.spotman.classes.models.subObjects.Image;
 import com.google.gson.Gson;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class Profile implements SettableModel
+public class Profile implements Settable
 {
     public Profile()
     {
