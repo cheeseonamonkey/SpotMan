@@ -175,6 +175,9 @@ public class RecycAdapter_RecentsTops extends RecyclerView.Adapter<RecycAdapter_
     }
 
 
+
+
+
     //view holder for cards
     public class TrackSimpleViewHolder extends RecyclerView.ViewHolder
     {
