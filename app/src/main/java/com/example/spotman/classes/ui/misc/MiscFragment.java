@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.spotman.MainActivity;
 import com.example.spotman.R;
@@ -22,6 +23,8 @@ public class MiscFragment extends Fragment
 {
 
     private MiscViewModel mViewModel;
+
+    private MiscFragment thisInstance = this;
 
     Global global;
 
@@ -59,8 +62,8 @@ binding.btnConnectToSpotify.setOnClickListener(new View.OnClickListener()
     @Override
     public void onClick(View view)
     {
-        new SplashDialog().show(getChildFragmentManager(), "splashFragment");
-
+        SplashDialog splashDialog = new SplashDialog(thisInstance);
+        splashDialog.show(getChildFragmentManager(), "splashFragment");
 
     }
 });
@@ -73,11 +76,8 @@ binding.btnGetMe.setOnClickListener(new View.OnClickListener()
     public void onClick(View view)
     {
 
-        global.requester.GetAndSetAsync("me", global.myProfile);
-        global.requester.GetAndSetAsync("me/player/recently-played", global.myRecentlyPlayed);
 
-        global.requester.GetAndSetAsync("me/top/tracks", global.myTopTracks);
-
+        getMe();
         
 
     }
@@ -98,6 +98,18 @@ binding.btnGetMe.setOnClickListener(new View.OnClickListener()
         super.onActivityCreated(savedInstanceState);
         mViewModel = new ViewModelProvider(this).get(MiscViewModel.class);
 
+    }
+
+    public void getMe()
+    {
+        global.requester.GetAndSetAsync("me", global.myProfile);
+        global.requester.GetAndSetAsync("me/player/recently-played", global.myRecentlyPlayed);
+
+
+        global.requester.GetAndSetAsync("me/top/tracks", global.myTopTracks);
+
+        global.requester.GetAndSetAsync("me/playlists", global.myPlaylistsList);
+        Toast.makeText(getContext(), "Loading my profile...", Toast.LENGTH_SHORT).show();
     }
 
 }

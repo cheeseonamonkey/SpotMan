@@ -39,4 +39,12 @@ public class PlaylistList  implements Settable
         previous = p.previous;
         total = p.total;
     }
+
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public int getCount() {
+        return total;
+    }
 }

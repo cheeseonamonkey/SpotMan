@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.example.spotman.MainActivity;
 import com.example.spotman.R;
@@ -80,6 +81,7 @@ public class AuthActivity extends AppCompatActivity
                     MainActivity.global.accessToken.token_type = authResponse.getType().name();
 
                     MainActivity.global.authenticated = true;
+
 
                     this.finish();
 

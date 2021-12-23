@@ -17,23 +17,27 @@ import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TabHost;
 import android.widget.TextView;
 
 import com.example.spotman.MainActivity;
 import com.example.spotman.R;
 import com.example.spotman.classes.misc.Global;
 import com.example.spotman.classes.models.Settable;
+import com.example.spotman.classes.models.root.Playlist;
+import com.example.spotman.classes.models.root.PlaylistList;
 import com.example.spotman.classes.models.root.Profile;
 import com.example.spotman.classes.models.root.RecentlyPlayed;
 import com.example.spotman.classes.models.root.TopTracks;
 import com.example.spotman.classes.ui.LoadableSubView;
-import com.example.spotman.databinding.ProfileSubViewFragmentBinding;
+import com.example.spotman.databinding.ProfileMeSubViewFragmentBinding;
+import com.example.spotman.databinding.ProfileMeSubViewFragmentBinding;
 
 public class ProfileSubViewFragment extends Fragment implements LoadableSubView
 {
 
     private ProfileSubViewViewModel mViewModel;
-    private ProfileSubViewFragmentBinding binding;
+    private ProfileMeSubViewFragmentBinding binding;
 
     Global global;
 
@@ -66,12 +70,14 @@ public class ProfileSubViewFragment extends Fragment implements LoadableSubView
         //Inflate the layout for this fragment:
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-        binding = ProfileSubViewFragmentBinding.inflate(getLayoutInflater(), container,false);
+        binding = ProfileMeSubViewFragmentBinding.inflate(getLayoutInflater(), container,false);
 
         View view=binding.getRoot();
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 //init:
+
+        setupTabHost(binding.tabHostMyProfile);
 
         global = MainActivity.global;
         Profile me = global.myProfile;
@@ -94,58 +100,13 @@ public class ProfileSubViewFragment extends Fragment implements LoadableSubView
 
         //recents expand button
 
-        binding.ckbRecentsExpand.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
-        {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b)
-            {
-                //checked
-                if (b)
-                {
-                    compoundButton.setBackgroundResource(R.drawable.caretdownicon);
 
-                    binding.frmRecycRecentHolder.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1f));
-
-                //unchecked
-                }else if(! b)
-                {
-                    compoundButton.setBackgroundResource(R.drawable.caretupicon);
-
-                    binding.frmRecycRecentHolder.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 0f));
-
-
-                }
-            }
-        });
 
 
 
         //tops expand button
 
-        binding.ckbTopsExpand.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
-        {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b)
-            {
-                //checked
-                if (b)
-                {
-                    compoundButton.setBackgroundResource(R.drawable.caretdownicon);
 
-                    binding.frmRecycTopsHolder.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1f));
-
-                    //unchecked
-                }else if(! b)
-                {
-                    compoundButton.setBackgroundResource(R.drawable.caretupicon);
-
-                    binding.frmRecycTopsHolder.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 0f));
-
-
-                }
-
-            }
-        });
 
         //END OF LISTENERS
         //=========
@@ -193,9 +154,11 @@ public class ProfileSubViewFragment extends Fragment implements LoadableSubView
             Profile profile = (Profile) toLoad;
 
 
-            //write to UI:
+            //write to top UI:
             imgProfilePic.setImageURI(Uri.parse(profile.getImages()[0].getUrl()));
             txtProfileName.setText(profile.getDisplay_name());
+            binding.txtMyFollowers.setText(String.valueOf(profile.getFollowers().getCount()) + " followers");
+            //set playlist num
 
 
         }else if(toLoad instanceof RecentlyPlayed)
@@ -231,8 +194,39 @@ public class ProfileSubViewFragment extends Fragment implements LoadableSubView
 
             //set adapter
             recycTops.setAdapter(recycAdapterTops);
+
+
+        }else if(toLoad instanceof PlaylistList)
+        {
+            PlaylistList myPlaylistsList = (PlaylistList) toLoad;
+
+            binding.txtNumPlaylists.setText(String.valueOf(myPlaylistsList.getCount()) + " playlists");
         }
 
 
     }
+
+
+    private void setupTabHost(TabHost tabHost)
+    {
+        tabHost.setup();
+
+        TabHost.TabSpec recentsTabSpec = tabHost.newTabSpec("Recents");
+        recentsTabSpec.setContent(R.id.tabMyRecents);
+        recentsTabSpec.setIndicator("Recents");
+
+        tabHost.addTab(recentsTabSpec);
+
+        TabHost.TabSpec topsTabSpec = tabHost.newTabSpec("Tops");
+        topsTabSpec.setContent(R.id.tabMyTops);
+        topsTabSpec.setIndicator("Tops");
+
+        tabHost.addTab(topsTabSpec);
+
+
+
+    }
+
+
+
 }

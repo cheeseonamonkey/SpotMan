@@ -1,6 +1,7 @@
 package com.example.spotman.classes.ui.splash;
 
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.app.Activity;
@@ -16,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.spotman.MainActivity;
+import com.example.spotman.classes.ui.misc.MiscFragment;
 import com.example.spotman.databinding.SplashFragmentBinding;
 
 public class SplashDialog extends DialogFragment
@@ -33,13 +35,16 @@ public class SplashDialog extends DialogFragment
     private SplashViewModel mViewModel;
     private SplashFragmentBinding binding;
 
+    private MiscFragment parentFrag;
 
-
-
-    public static SplashDialog newInstance()
+    public SplashDialog(MiscFragment miscFragment)
     {
-        return new SplashDialog();
+        super();
+        parentFrag = miscFragment;
+
     }
+
+
 
 
 
@@ -93,8 +98,11 @@ public class SplashDialog extends DialogFragment
         mViewModel = new ViewModelProvider(this).get(SplashViewModel.class);
     }
 
-
-
-
-
+    @Override
+    public void onDestroyView()
+    {
+        super.onDestroyView();
+MainActivity.log.log("Destroying splash dialog...");
+        parentFrag.getMe();
+    }
 }

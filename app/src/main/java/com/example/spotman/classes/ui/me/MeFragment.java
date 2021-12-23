@@ -130,6 +130,7 @@ public class MeFragment extends Fragment
         profileSubViewFrag.loadSubView(global.myProfile);
         profileSubViewFrag.loadSubView(global.myRecentlyPlayed);
         profileSubViewFrag.loadSubView(global.myTopTracks);
+        profileSubViewFrag.loadSubView(global.myPlaylistsList);
 
 
 

@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.example.spotman.classes.misc.http.AccessToken;
 import com.example.spotman.classes.misc.http.Requester;
+import com.example.spotman.classes.models.root.PlaylistList;
 import com.example.spotman.classes.models.root.Profile;
 import com.example.spotman.classes.models.root.RecentlyPlayed;
 import com.example.spotman.classes.models.root.TopTracks;
@@ -43,6 +44,8 @@ public class Global
     public Profile myProfile = new Profile();
     public RecentlyPlayed myRecentlyPlayed = new RecentlyPlayed();
     public TopTracks myTopTracks = new TopTracks();
+    public PlaylistList myPlaylistsList = new PlaylistList();
+    public String myProfileID = new String();
 
 
     public Profile selectedProfile = new Profile();
@@ -70,6 +73,8 @@ public class Global
     {
 
     }
+
+
 
 
     public void initRequester(Context context)

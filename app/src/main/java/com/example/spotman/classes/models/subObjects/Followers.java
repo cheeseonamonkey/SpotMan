@@ -9,4 +9,8 @@ public class Followers
 
     private Object href;
     private int total;
+
+    public int getCount() {
+        return total;
+    }
 }
