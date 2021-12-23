@@ -5,12 +5,10 @@ import android.content.Context;
 import androidx.annotation.NonNull;
 
 import com.example.spotman.MainActivity;
-import com.example.spotman.classes.Fact;
 import com.example.spotman.classes.misc.MyLogger;
-import com.google.gson.Gson;
+import com.example.spotman.classes.models.Settable;
 
 import java.io.IOException;
-import java.util.concurrent.Executor;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -22,7 +20,7 @@ import okhttp3.Response;
 public class Requester
 {
     //urlBase of API
-    static final String urlBase = "https://catfact.ninja/";
+    static final String urlBase = "https://api.spotify.com/v1/";
 
     MyLogger log;
 
@@ -60,7 +58,7 @@ public class Requester
         HttpUrl url = HttpUrl.parse(urlBase + urlPath).newBuilder().build();
 
         //creates request
-        Request request = new Request.Builder().url(url).build();
+        Request request = new Request.Builder().url(url).addHeader("Authorization","Bearer " + MainActivity.global.accessToken.access_token).build();
 
         //logs request created
         MainActivity.log.logRequest(request);
@@ -97,16 +95,14 @@ public class Requester
     //=======================================================================
     //GET(async):
 
-    public void GetAsync(String urlPath)
+    public void GetAndSetAsync(String urlPath, Settable outObj)
     {
 
-        String strOut;
-
-
-        //start request
+       //start request
         Request request = MakeRequest(urlPath);
 
         //enqueue the request and implement callbacks:
+
         client.newCall(request).enqueue(new Callback()
         {
 
@@ -127,25 +123,29 @@ public class Requester
                 if(response.isSuccessful())
                 {
 
+                    //  body().string() can only be read once
                 //response string in JSON:
                 String strJson = response.body().string();
 
-                        //  body().string() can only be read once
+
 
                 MainActivity.log.log( "GET async success: " + urlPath, "http");
 
 
                 //final output object
-                final Fact factOut = new Gson().fromJson(strJson, Fact.class);
+                // final Fact factOut = new Gson().fromJson(strJson, Fact.class);
 
 
                 //we cannot assign directly to to the main thread,
-                //but we can work with an existing collection, or use an existing var's setters:
-                        //MainActivity.global.factList.add(factReturn);
+                //but we can work with an existing collections/objects:
 
-                //or we can run on the UI thread:
-                    /*
-                    */
+                //or we can run on the UI thread?
+
+
+
+                    //output
+                    outObj.setFromJson(strJson);
+
 
 
 
@@ -154,7 +154,7 @@ public class Requester
 
                 else // status code bad
                 {
-                    log.logError("status success code bad   - " + response.code() + " - " + response.message());
+                    log.logError("status success code bad   - " + response.code() + " - " + response.message().toString() + response.toString());
                 }
 
 

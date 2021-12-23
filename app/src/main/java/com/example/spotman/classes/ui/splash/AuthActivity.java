@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import com.example.spotman.MainActivity;
 import com.example.spotman.R;
+import com.example.spotman.classes.misc.http.AccessToken;
 import com.spotify.sdk.android.auth.AuthorizationClient;
 import com.spotify.sdk.android.auth.AuthorizationRequest;
 import com.spotify.sdk.android.auth.AuthorizationResponse;
@@ -44,9 +45,6 @@ public class AuthActivity extends AppCompatActivity
         AuthorizationClient.openLoginActivity(this, REQUEST_CODE, authRequest);
         //      MainActivity.log.log("Current activity: " + getActivity().getPackageName(), "auth");
 
-
-
-
     }
 
 
@@ -67,14 +65,21 @@ public class AuthActivity extends AppCompatActivity
                 //success:
                 case TOKEN:
 
-                    authResponse.getAccessToken();
+                    String authToken = authResponse.getAccessToken();
 
 
                     //to be exchanged for an auth code
                   //   authToken = authResponse.getAccessToken();
-                    MainActivity.log.log("Auth success! \n-\t Access token= " + authResponse.getAccessToken(), "auth");
+                    MainActivity.log.log("Auth success! \n-\t Access token= " + authToken, "auth");
 
+                    if(MainActivity.global.accessToken == null)
+                        MainActivity.global.accessToken = AccessToken.newToken();
 
+                    MainActivity.global.accessToken.access_token = authToken;
+                    MainActivity.global.accessToken.expires_in = authResponse.getExpiresIn();
+                    MainActivity.global.accessToken.token_type = authResponse.getType().name();
+
+                    MainActivity.global.authenticated = true;
 
                     this.finish();
 
@@ -91,7 +96,7 @@ public class AuthActivity extends AppCompatActivity
 
 
                 default:
-                    MainActivity.log.log("Authorization cacelled?", "error");
+                    MainActivity.log.log("Authorization cancelled?", "error");
 
                     break;
 

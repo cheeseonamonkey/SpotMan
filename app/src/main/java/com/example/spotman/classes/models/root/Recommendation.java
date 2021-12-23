@@ -1,11 +1,14 @@
 package com.example.spotman.classes.models.root;
 
+import com.example.spotman.classes.models.Settable;
 import com.example.spotman.classes.models.subObjects.Seed;
 import com.example.spotman.classes.models.subObjects.Track;
 
 import java.util.List;
 
-public class Recommendation
+import kotlin.NotImplementedError;
+
+public class Recommendation  implements Settable
 {
     public Recommendation()
     {
@@ -13,4 +16,16 @@ public class Recommendation
 
     private List<Track> tracks;
     private List<Seed> seeds;
+
+    @Override
+    public void setLoaded(boolean isLoaded)
+    {
+
+    }
+
+    @Override
+    public void setFromJson(String json)
+    {
+        throw new NotImplementedError();
+    }
 }

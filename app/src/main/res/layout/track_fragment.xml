@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".classes.ui.track.TrackFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="1dp"
+        android:orientation="vertical"
+        android:outlineProvider="bounds">
+
+        <LinearLayout
+            android:id="@+id/linTrackTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:background="#339E7171"
+            android:elevation="1dp"
+            android:orientation="vertical"
+            android:outlineProvider="bounds"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/txtTrackName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Track name" />
+
+            <TextView
+                android:id="@+id/txtTrackArtist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Artist"
+                android:textStyle="italic" />
+        </LinearLayout>
+
+        <TableLayout
+            android:id="@+id/tblAudioFeatures"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:background="#339E7171"
+            android:clipToPadding="false"
+            android:elevation="1dp"
+            android:outlineProvider="bounds"
+            android:padding="7dp"
+            android:stretchColumns="0,3">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false">
+
+                <TextView
+                    android:id="@+id/lblTrackEnergy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="2dp"
+                    android:text="Energy" />
+
+                <TextView
+                    android:id="@+id/txtTrackEnergy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginTop="-1dp"
+                    android:layout_marginBottom="-1dp"
+                    android:text="0"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/imgInfoEnergy"
+                    android:layout_width="23dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="17dp"
+                    android:background="@drawable/helpicon"
+                    android:backgroundTint="#80142CCF"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/lblTrackLiveliness"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="Liveliness" />
+
+                <TextView
+                    android:id="@+id/txtTrackLiveliness2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginTop="-1dp"
+                    android:layout_marginBottom="-1dp"
+                    android:text="0"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/imgInfoLiveliness"
+                    android:layout_width="23dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/helpicon"
+                    android:backgroundTint="#80142CCF"
+                    android:scaleType="centerCrop" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false">
+
+                <TextView
+                    android:id="@+id/lblTrackSpeechiness"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="2dp"
+                    android:text="Speechiness" />
+
+                <TextView
+                    android:id="@+id/txtTrackSpeechiness2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginTop="-1dp"
+                    android:layout_marginBottom="-1dp"
+                    android:text="0"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/imgInfoSpeechiness"
+                    android:layout_width="23dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="17dp"
+                    android:background="@drawable/helpicon"
+                    android:backgroundTint="#80142CCF"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/lblTrackDanceability"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="Danceability" />
+
+                <TextView
+                    android:id="@+id/txtTrackDanceability2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginTop="-1dp"
+                    android:layout_marginBottom="-1dp"
+                    android:text="0"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/imgInfoDanceability"
+                    android:layout_width="23dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/helpicon"
+                    android:backgroundTint="#80142CCF"
+                    android:scaleType="centerCrop" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false">
+
+                <TextView
+                    android:id="@+id/lblTrackValence"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="2dp"
+                    android:text="Valence" />
+
+                <TextView
+                    android:id="@+id/txtTrackValence2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginTop="-1dp"
+                    android:layout_marginBottom="-1dp"
+                    android:text="0"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/imgInfoValence"
+                    android:layout_width="23dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="17dp"
+                    android:background="@drawable/helpicon"
+                    android:backgroundTint="#80142CCF"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/lblTrackAcousticness"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="Acousticness" />
+
+                <TextView
+                    android:id="@+id/lblTrackAcousticness2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginTop="-1dp"
+                    android:layout_marginBottom="-1dp"
+                    android:text="0"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/imgInfoAcousticness"
+                    android:layout_width="23dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/helpicon"
+                    android:backgroundTint="#80142CCF"
+                    android:scaleType="centerCrop" />
+
+            </TableRow>
+
+        </TableLayout>
+
+        <TableLayout
+            android:id="@+id/tblMusicalFeatures"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:background="#339E7171"
+            android:clipToPadding="false"
+            android:elevation="1dp"
+            android:outlineProvider="bounds"
+            android:padding="7dp"
+            android:stretchColumns="0,3">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/lblTrackLoudness"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="2dp"
+                    android:text="Loudness" />
+
+                <TextView
+                    android:id="@+id/txtTrackLoudness"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginTop="-1dp"
+                    android:layout_marginBottom="-1dp"
+                    android:text="0"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/imgInfoLoudness"
+                    android:layout_width="23dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="17dp"
+                    android:background="@drawable/helpicon"
+                    android:backgroundTint="#80142CCF"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/lblen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="2dp"
+                    android:text="Tempo" />
+
+                <TextView
+                    android:id="@+id/txtTrackTempo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginTop="-1dp"
+                    android:layout_marginBottom="-1dp"
+                    android:text="0"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/imgInfoTempo"
+                    android:layout_width="23dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/helpicon"
+                    android:backgroundTint="#80142CCF"
+                    android:scaleType="centerCrop" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/lbltime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="2dp"
+                    android:text="Time signature" />
+
+                <TextView
+                    android:id="@+id/txtTimeSignature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginTop="-1dp"
+                    android:layout_marginBottom="-1dp"
+                    android:text="0"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/imgInfoTimeSignature"
+                    android:layout_width="23dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="17dp"
+                    android:background="@drawable/helpicon"
+                    android:backgroundTint="#80142CCF"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/lblen2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="2dp"
+                    android:text="something else" />
+
+                <TextView
+                    android:id="@+id/txtTrackTempo2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginTop="-1dp"
+                    android:layout_marginBottom="-1dp"
+                    android:text="0"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/imgInfoTempo2"
+                    android:layout_width="23dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/helpicon"
+                    android:backgroundTint="#80142CCF"
+                    android:scaleType="centerCrop" />
+            </TableRow>
+        </TableLayout>
+
+        <LinearLayout
+            android:id="@+id/linTrackRecommended"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:background="#339E7171"
+            android:elevation="1dp"
+            android:orientation="vertical"
+            android:outlineProvider="paddedBounds"
+            android:padding="7dp">
+
+            <TextView
+                android:id="@+id/textView30"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:text="Recommended from this track" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycTrackReommended"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:background="#0D684E4E"
+                android:padding="4dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

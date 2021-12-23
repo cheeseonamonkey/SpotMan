@@ -9,7 +9,8 @@ public class Item
     }
 
 
-//could abstract this
+//could abstract this much better
+//=======================================================================
 
     //playlist items
     private boolean collaborative;
@@ -28,19 +29,26 @@ public class Item
     private String uri;
 
     //track items
-
-    //todo: still using this datetime class from C#
-  //  private DateTime added_at;
+    //todo: still this datetime class from C#
+  /*  private DateTime added_at;  */
     private AddedBy added_by;
+
     private boolean is_local;
     private Track track;
     private VideoThumbnail video_thumbnail;
 
+
+
+
     //recently played items
 
+ //todo: C# DateTime class here also
+    //   private DateTime played_at;
 
- //   private DateTime played_at;
-    private SpotifyContext context;     //todo: wacky DateTime class here also
+    private SpotifyContext context;
 
-
+    public Track getTrack()
+    {
+        return track;
+    }
 }
