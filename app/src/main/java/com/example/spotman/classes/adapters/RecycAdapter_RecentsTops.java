@@ -1,4 +1,4 @@
-package com.example.spotman.classes.ui.profiles.profileSubView;
+package com.example.spotman.classes.adapters;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -107,7 +107,8 @@ public class RecycAdapter_RecentsTops extends RecyclerView.Adapter<RecycAdapter_
         holder.txtTrack.setText(itemList.get(pos).getName());
 
         //=======================================================================
-        //MUST SET VIEWHOLDER VIEWS HERE OR THE DATA WILL BE RECYCLED A FEW VIEWHOLDERS DOWN:
+        //because that took forever to figure out:
+        //YOU MUST SET EVERY SINGLE VIEWHOLDER VIEWS HERE OR THE DATA WILL BE RECYCLED A FEW VIEWHOLDERS DOWN:
             //when the holder is re-used further down the list, any attributes left unset will remain the same!
             //thats why the artist and track name were fine but the unimplemented heart checkbox was not
                 //holder.ckbHeart.setChecked(false);

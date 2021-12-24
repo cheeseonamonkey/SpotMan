@@ -51,4 +51,33 @@ public class Item
     {
         return track;
     }
+
+
+    public boolean isCollaborative() {
+        return collaborative;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public boolean isPrivate() {
+        return isPrivate;
+    }
+
+    public Tracks getTracks() {
+        return tracks;
+    }
 }

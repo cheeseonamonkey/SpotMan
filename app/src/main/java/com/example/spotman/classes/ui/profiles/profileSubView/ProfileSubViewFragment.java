@@ -14,23 +14,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TabHost;
 import android.widget.TextView;
 
 import com.example.spotman.MainActivity;
 import com.example.spotman.R;
+import com.example.spotman.classes.adapters.RecycAdapter_RecentsTops;
 import com.example.spotman.classes.misc.Global;
 import com.example.spotman.classes.models.Settable;
-import com.example.spotman.classes.models.root.Playlist;
 import com.example.spotman.classes.models.root.PlaylistList;
 import com.example.spotman.classes.models.root.Profile;
 import com.example.spotman.classes.models.root.RecentlyPlayed;
 import com.example.spotman.classes.models.root.TopTracks;
 import com.example.spotman.classes.ui.LoadableSubView;
-import com.example.spotman.databinding.ProfileMeSubViewFragmentBinding;
 import com.example.spotman.databinding.ProfileMeSubViewFragmentBinding;
 
 public class ProfileSubViewFragment extends Fragment implements LoadableSubView
@@ -165,9 +162,6 @@ public class ProfileSubViewFragment extends Fragment implements LoadableSubView
         {
 
             RecentlyPlayed recents = (RecentlyPlayed) toLoad;
-
-
-
 
             RecyclerView recycRecents = binding.recycRecent;
             //layout manager tells it how to behave as a list
