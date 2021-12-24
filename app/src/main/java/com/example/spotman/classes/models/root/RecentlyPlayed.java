@@ -85,7 +85,7 @@ public class RecentlyPlayed implements Settable
 
         //on set, gets which songs are hearted - must be done here to stay synchronous
         heartedList = new HeartedList();
-        MainActivity.global.requester.GetAndSetAsync("me/tracks/contains?ids=" + getTrackIdsString(), heartedList);
+        MainActivity.global.requester.getAndSetAsync("me/tracks/contains?ids=" + getTrackIdsString(), heartedList);
 
 
 

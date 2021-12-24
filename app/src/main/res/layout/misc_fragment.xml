@@ -34,5 +34,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Log" />
+
+        <Button
+            android:id="@+id/btnSelectTestProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select test profile" />
     </LinearLayout>
 </FrameLayout>

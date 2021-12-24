@@ -95,7 +95,7 @@ public class Requester
     //=======================================================================
     //GET(async):
 
-    public void GetAndSetAsync(String urlPath, Settable outObj)
+    public void getAndSetAsync(String urlPath, Settable outObj)
     {
 
        //start request

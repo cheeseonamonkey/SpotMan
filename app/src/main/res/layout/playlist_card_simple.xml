@@ -82,7 +82,8 @@
                 android:minWidth="0dp"
                 android:minHeight="0dp"
                 android:scaleType="centerInside"
-                app:srcCompat="@drawable/caretrighticon" />
+                app:srcCompat="@drawable/caretrighticon"
+                tools:ignore="SpeakableTextPresentCheck" />
         </LinearLayout>
 
     </LinearLayout>

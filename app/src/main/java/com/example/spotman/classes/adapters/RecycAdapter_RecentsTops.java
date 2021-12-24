@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.spotman.MainActivity;
 import com.example.spotman.R;
 import com.example.spotman.classes.models.Settable;
+import com.example.spotman.classes.models.root.PlaylistTracks;
 import com.example.spotman.classes.models.root.RecentlyPlayed;
 import com.example.spotman.classes.models.root.TopTracks;
 import com.example.spotman.classes.models.subObjects.Track;
@@ -56,6 +57,12 @@ public class RecycAdapter_RecentsTops extends RecyclerView.Adapter<RecycAdapter_
             TopTracks topt = (TopTracks) rootModelWithTrackList;
 
             itemList = topt.getTracklist();
+
+        }else if(rootModelWithTrackList instanceof PlaylistTracks)
+        {
+            PlaylistTracks pt = (PlaylistTracks) rootModelWithTrackList;
+
+            itemList = pt.getTrackList();
 
         }
 

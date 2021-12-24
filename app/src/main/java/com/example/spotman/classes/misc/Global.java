@@ -1,10 +1,13 @@
 package com.example.spotman.classes.misc;
 
 import android.content.Context;
+import android.widget.TabHost;
 
 import com.example.spotman.classes.misc.http.AccessToken;
 import com.example.spotman.classes.misc.http.Requester;
+import com.example.spotman.classes.models.root.Playlist;
 import com.example.spotman.classes.models.root.PlaylistList;
+import com.example.spotman.classes.models.root.PlaylistTracks;
 import com.example.spotman.classes.models.root.Profile;
 import com.example.spotman.classes.models.root.RecentlyPlayed;
 import com.example.spotman.classes.models.root.TopTracks;
@@ -40,16 +43,53 @@ public class Global
     //=======================================================================
     //models
 
+    //me:
+    public String myProfileID = new String();
+    public TopTracks myTopTracks = new TopTracks();
 
     public Profile myProfile = new Profile();
     public RecentlyPlayed myRecentlyPlayed = new RecentlyPlayed();
-    public TopTracks myTopTracks = new TopTracks();
     public PlaylistList myPlaylistsList = new PlaylistList();
-    public String myProfileID = new String();
 
-
+    //user:
     public Profile selectedProfile = new Profile();
     public RecentlyPlayed selectedProfileRecentlyPlayed = new RecentlyPlayed();
+
+    public PlaylistList selectedProfilePlaylistsList = new PlaylistList();
+
+    public Playlist selectedPlaylist = new Playlist();
+    public PlaylistTracks selectedPlaylistTracks = new PlaylistTracks();
+
+    public void getMe()
+    {
+        //me only:
+        requester.getAndSetAsync("me", myProfile);
+        requester.getAndSetAsync("me/player/recently-played", myRecentlyPlayed);
+        requester.getAndSetAsync("me/top/tracks", myTopTracks);
+
+        myProfileID = myProfile.getId();
+
+        requester.getAndSetAsync("me/playlists", myPlaylistsList);
+
+        selectedProfile = myProfile;
+        selectedProfilePlaylistsList = myPlaylistsList;
+        selectedProfileRecentlyPlayed = myRecentlyPlayed;
+
+
+
+    }
+
+    public void getUserPlaylists(String userId)
+    {
+        //todo: need to loop this w/ offset
+        requester.getAndSetAsync("users/" + userId + "/playlists?limit=50", selectedProfilePlaylistsList);
+    }
+
+    public void getPlaylist(String playlistId)
+    {
+        requester.getAndSetAsync("playlists/" + playlistId, selectedPlaylist);
+        requester.getAndSetAsync("playlists/" + playlistId + "/tracks", selectedPlaylistTracks);
+    }
 
 
     //========

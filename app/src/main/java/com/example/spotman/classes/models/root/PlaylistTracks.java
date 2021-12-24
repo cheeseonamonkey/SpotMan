@@ -3,7 +3,9 @@ package com.example.spotman.classes.models.root;
 import com.example.spotman.MainActivity;
 import com.example.spotman.classes.models.Settable;
 import com.example.spotman.classes.models.subObjects.Item;
+import com.example.spotman.classes.models.subObjects.Track;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PlaylistTracks implements Settable
@@ -12,6 +14,7 @@ public class PlaylistTracks implements Settable
     {
     }
 
+    boolean isLoaded = false;
 
 
     private String href;
@@ -21,6 +24,7 @@ public class PlaylistTracks implements Settable
     private int offset;
     private java.lang.Object previous;
     private int total;
+
 
     @Override
     public String toString()
@@ -36,16 +40,35 @@ public class PlaylistTracks implements Settable
                 '}';
     }
 
+    //todo: put this isloaded in that model interface
+    public boolean isLoaded()
+    {
+        return isLoaded;
+    }
+
     @Override
     public void setLoaded(boolean isLoaded)
     {
+        this.isLoaded = isLoaded;
+    }
 
+    public List<Track> getTrackList()
+    {
+        List<Track> trackListOut = new ArrayList<>();
+
+        for(Item i : items)
+        {
+            trackListOut.add(i.getTrack());
+        }
+
+        return trackListOut;
     }
 
     @Override
     public void setFromJson(String json)
     {
         PlaylistTracks p = MainActivity.global.gson.fromJson(json, PlaylistTracks.class);
+
 
         href = p.href;
         items = p.items;
@@ -54,5 +77,9 @@ public class PlaylistTracks implements Settable
         offset = p.offset;
         previous = p.previous;
         total = p.total;
+
+        setLoaded(true);
+
+
     }
 }

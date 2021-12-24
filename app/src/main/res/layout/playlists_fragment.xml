@@ -27,6 +27,18 @@
                 android:layout_height="match_parent">
 
                 <LinearLayout
+                    android:id="@+id/tabPlaylistName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycPlaylist"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:id="@+id/tabAllPlaylists"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -36,14 +48,6 @@
                         android:id="@+id/recycPlaylistsAll"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/tabPlaylistName"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
                 </LinearLayout>
 
             </FrameLayout>

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -11,9 +12,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.spotman.MainActivity;
 import com.example.spotman.R;
 import com.example.spotman.classes.models.root.PlaylistList;
 import com.example.spotman.classes.models.subObjects.Item;
+import com.example.spotman.classes.ui.playlists.PlaylistsFragment;
 
 import java.util.List;
 
@@ -22,12 +25,15 @@ public class RecycAdapter_PlaylistsAll extends RecyclerView.Adapter<RecycAdapter
 
     List<Item> itemList;
     Context context;
+    PlaylistsFragment parentFrag;
 
-    public RecycAdapter_PlaylistsAll(PlaylistList playlistList, Context context)
+    public RecycAdapter_PlaylistsAll(PlaylistList playlistList, Context context, PlaylistsFragment parentFrag)
     {
         this.context = context;
 
         this.itemList = playlistList.getItems();
+
+        this.parentFrag = parentFrag;
     }
 
     @NonNull
@@ -51,9 +57,11 @@ public class RecycAdapter_PlaylistsAll extends RecyclerView.Adapter<RecycAdapter
         int pos = holder.getAdapterPosition();
         Item currentItem = itemList.get(pos);
 
+        holder.pos = pos;
+
         //holder.imgPlaylistCover
         holder.txtPlaylistName.setText(String.valueOf(currentItem.getName()));
-        holder.txtPlaylistNumTracks.setText(String.valueOf(currentItem.getTracks().getCount()));
+        holder.txtPlaylistNumTracks.setText(new String(String.valueOf(currentItem.getTracks().getCount()) + " tracks"));
 
     }
 
@@ -69,10 +77,16 @@ public class RecycAdapter_PlaylistsAll extends RecyclerView.Adapter<RecycAdapter
     class ViewHolder extends RecyclerView.ViewHolder
     {
 
+        int pos;
+
         ImageView imgPlaylistCover;
         TextView txtPlaylistName;
         TextView txtPlaylistNumTracks;
         Spinner spnPlaylistCardActions;
+
+        ImageButton imgBtnGo;
+
+
 
 
         public ViewHolder(View view)
@@ -84,8 +98,26 @@ public class RecycAdapter_PlaylistsAll extends RecyclerView.Adapter<RecycAdapter
             txtPlaylistNumTracks = view.findViewById(R.id.txtPlaylistNumTracks);
             spnPlaylistCardActions = view.findViewById(R.id.spnPlaylistCardActions);
 
+            imgBtnGo = view.findViewById(R.id.imgBtnPlaylistView);
+
+            imgBtnGo.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view)
+                {
+                    parentFrag.goToPlaylist(itemList.get(pos).getId());
+                }
+            });
 
 
+        }
+
+
+
+        public int getPos() {
+            return pos;
+        }
+        public void setPos(int pos) {
+            this.pos = pos;
         }
     }
 

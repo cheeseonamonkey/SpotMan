@@ -77,9 +77,17 @@ binding.btnGetMe.setOnClickListener(new View.OnClickListener()
     {
 
 
-        getMe();
+        MainActivity.global.getMe();
         
 
+    }
+});
+
+binding.btnSelectTestProfile.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view)
+    {
+        MainActivity.global.getUserPlaylists("11132358058");
     }
 });
 
@@ -100,16 +108,6 @@ binding.btnGetMe.setOnClickListener(new View.OnClickListener()
 
     }
 
-    public void getMe()
-    {
-        global.requester.GetAndSetAsync("me", global.myProfile);
-        global.requester.GetAndSetAsync("me/player/recently-played", global.myRecentlyPlayed);
 
-
-        global.requester.GetAndSetAsync("me/top/tracks", global.myTopTracks);
-
-        global.requester.GetAndSetAsync("me/playlists", global.myPlaylistsList);
-        Toast.makeText(getContext(), "Loading my profile...", Toast.LENGTH_SHORT).show();
-    }
 
 }

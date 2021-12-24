@@ -80,5 +80,8 @@ public class Playlist implements Settable
         this.tracks = p.tracks;
         this.type = p.type;
         this.uri = p.uri;
+
+
+
     }
 }

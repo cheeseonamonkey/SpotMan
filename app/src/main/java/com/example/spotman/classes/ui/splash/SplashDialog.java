@@ -101,8 +101,10 @@ public class SplashDialog extends DialogFragment
     @Override
     public void onDestroyView()
     {
+
+
         super.onDestroyView();
-MainActivity.log.log("Destroying splash dialog...");
-        parentFrag.getMe();
+        MainActivity.log.log("Destroying splash dialog...");
+        MainActivity.global.getMe();
     }
 }
