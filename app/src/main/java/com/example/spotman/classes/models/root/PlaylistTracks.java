@@ -4,6 +4,7 @@ import com.example.spotman.MainActivity;
 import com.example.spotman.classes.models.Settable;
 import com.example.spotman.classes.models.subObjects.Item;
 import com.example.spotman.classes.models.subObjects.Track;
+import com.example.spotman.classes.ui.playlists.PlaylistsFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +41,7 @@ public class PlaylistTracks implements Settable
                 '}';
     }
 
-    //todo: put this isloaded in that model interface
+    //todo: require this isloaded in that model interface
     public boolean isLoaded()
     {
         return isLoaded;
@@ -50,6 +51,7 @@ public class PlaylistTracks implements Settable
     public void setLoaded(boolean isLoaded)
     {
         this.isLoaded = isLoaded;
+
     }
 
     public List<Track> getTrackList()
@@ -79,6 +81,8 @@ public class PlaylistTracks implements Settable
         total = p.total;
 
         setLoaded(true);
+
+
 
 
     }

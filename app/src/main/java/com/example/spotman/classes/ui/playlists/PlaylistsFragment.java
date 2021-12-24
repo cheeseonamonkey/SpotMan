@@ -2,7 +2,6 @@ package com.example.spotman.classes.ui.playlists;
 
 import androidx.lifecycle.ViewModelProvider;
 
-import android.database.DatabaseErrorHandler;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -20,8 +19,6 @@ import com.example.spotman.MainActivity;
 import com.example.spotman.R;
 import com.example.spotman.classes.adapters.RecycAdapter_PlaylistsAll;
 import com.example.spotman.classes.adapters.RecycAdapter_RecentsTops;
-import com.example.spotman.classes.models.root.PlaylistList;
-import com.example.spotman.classes.models.root.RecentlyPlayed;
 import com.example.spotman.databinding.PlaylistsFragmentBinding;
 
 public class PlaylistsFragment extends Fragment
@@ -34,6 +31,8 @@ public class PlaylistsFragment extends Fragment
     {
         return new PlaylistsFragment();
     }
+
+
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -76,6 +75,7 @@ public class PlaylistsFragment extends Fragment
 
 
 
+
     public void setupAdapters()
     {
 
@@ -94,7 +94,7 @@ public class PlaylistsFragment extends Fragment
         //YOU ARE HERE
         /*
 
-        Playlist view is working but buggy, you have to go out of the tab and back in for it to load, the adapter just needs to be notified of data changes
+        Playlist view is working but buggy, you have to go out of the tab and back in for it to load, the adapter just needs to be notified of data changes but from another thread?
 
          */
 
@@ -110,6 +110,8 @@ public class PlaylistsFragment extends Fragment
 
             //set adapter
             recycViewPlaylist.setAdapter(playlistViewTrackAdapter);
+
+
         }
 
     }
@@ -124,12 +126,19 @@ public class PlaylistsFragment extends Fragment
 
     public void goToPlaylist(String playlistId)
     {
+
+        MainActivity.global.getPlaylist(playlistId, binding);
+
         binding.tabHostPlaylist.setCurrentTabByTag("Playlist");
 
-        MainActivity.global.getPlaylist(playlistId);
-
-
     }
+    public PlaylistsFragmentBinding getBinding()
+    {
+        return binding;
+    }
+
+
+
 
     void setupTabs(TabHost tabHost)
     {

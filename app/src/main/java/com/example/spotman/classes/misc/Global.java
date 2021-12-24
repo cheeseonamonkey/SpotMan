@@ -11,6 +11,7 @@ import com.example.spotman.classes.models.root.PlaylistTracks;
 import com.example.spotman.classes.models.root.Profile;
 import com.example.spotman.classes.models.root.RecentlyPlayed;
 import com.example.spotman.classes.models.root.TopTracks;
+import com.example.spotman.databinding.PlaylistsFragmentBinding;
 import com.google.gson.Gson;
 
 public class Global
@@ -89,6 +90,12 @@ public class Global
     {
         requester.getAndSetAsync("playlists/" + playlistId, selectedPlaylist);
         requester.getAndSetAsync("playlists/" + playlistId + "/tracks", selectedPlaylistTracks);
+    }
+
+    public void getPlaylist(String playlistId, PlaylistsFragmentBinding fragmentBinding)
+    {
+        getPlaylist(playlistId);
+
     }
 
 

@@ -25,6 +25,8 @@ public class RecycAdapter_PlaylistsAll extends RecyclerView.Adapter<RecycAdapter
 
     List<Item> itemList;
     Context context;
+
+    //for in the viewHolder
     PlaylistsFragment parentFrag;
 
     public RecycAdapter_PlaylistsAll(PlaylistList playlistList, Context context, PlaylistsFragment parentFrag)
@@ -74,9 +76,12 @@ public class RecycAdapter_PlaylistsAll extends RecyclerView.Adapter<RecycAdapter
             return itemList.size();
     }
 
+
+
+
     class ViewHolder extends RecyclerView.ViewHolder
     {
-
+        //adapter position, set in onBind
         int pos;
 
         ImageView imgPlaylistCover;
@@ -93,6 +98,8 @@ public class RecycAdapter_PlaylistsAll extends RecyclerView.Adapter<RecycAdapter
         {
             super(view);
 
+
+
             imgPlaylistCover = view.findViewById(R.id.imgPlaylistCover);
             txtPlaylistName = view.findViewById(R.id.txtPlaylistName);
             txtPlaylistNumTracks = view.findViewById(R.id.txtPlaylistNumTracks);
@@ -105,12 +112,12 @@ public class RecycAdapter_PlaylistsAll extends RecyclerView.Adapter<RecycAdapter
                 public void onClick(View view)
                 {
                     parentFrag.goToPlaylist(itemList.get(pos).getId());
+
                 }
             });
 
 
         }
-
 
 
         public int getPos() {
