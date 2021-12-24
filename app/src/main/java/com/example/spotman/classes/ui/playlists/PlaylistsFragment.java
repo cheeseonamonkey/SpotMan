@@ -124,12 +124,19 @@ public class PlaylistsFragment extends Fragment
 
     }
 
+
+
     public void goToPlaylist(String playlistId)
     {
 
+        MainActivity.global.appContext = getContext().getApplicationContext();
+
         MainActivity.global.getPlaylist(playlistId, binding);
 
-        binding.tabHostPlaylist.setCurrentTabByTag("Playlist");
+
+            binding.tabHostPlaylist.setCurrentTabByTag("Playlist");
+
+
 
     }
     public PlaylistsFragmentBinding getBinding()

@@ -113,6 +113,7 @@ public class RecycAdapter_PlaylistsAll extends RecyclerView.Adapter<RecycAdapter
                 {
                     parentFrag.goToPlaylist(itemList.get(pos).getId());
 
+
                 }
             });
 

@@ -3,6 +3,7 @@ package com.example.spotman.classes.misc;
 import android.content.Context;
 import android.widget.TabHost;
 
+import com.example.spotman.MainActivity;
 import com.example.spotman.classes.misc.http.AccessToken;
 import com.example.spotman.classes.misc.http.Requester;
 import com.example.spotman.classes.models.root.Playlist;
@@ -40,6 +41,7 @@ public class Global
 
     public Gson gson = new Gson();
 
+    public Context appContext;
 
     //=======================================================================
     //models
@@ -60,6 +62,7 @@ public class Global
 
     public Playlist selectedPlaylist = new Playlist();
     public PlaylistTracks selectedPlaylistTracks = new PlaylistTracks();
+
 
     public void getMe()
     {
