@@ -10,10 +10,11 @@
     tools:context=".classes.ui.profiles.profileSubView.ProfileSubViewFragment">
 
     <LinearLayout
-        android:id="@+id/linTopProfileSecion"
+        android:id="@+id/linTopProfileSection"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="2dp"
+        android:background="#1AAE3611"
         android:orientation="horizontal"
         android:padding="4dp">
 

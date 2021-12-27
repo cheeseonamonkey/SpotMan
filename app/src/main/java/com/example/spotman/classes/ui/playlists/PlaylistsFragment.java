@@ -19,6 +19,7 @@ import com.example.spotman.MainActivity;
 import com.example.spotman.R;
 import com.example.spotman.classes.adapters.RecycAdapter_PlaylistsAll;
 import com.example.spotman.classes.adapters.RecycAdapter_RecentsTops;
+import com.example.spotman.classes.ui.splash.SplashDialog;
 import com.example.spotman.databinding.PlaylistsFragmentBinding;
 
 public class PlaylistsFragment extends Fragment
@@ -63,6 +64,23 @@ public class PlaylistsFragment extends Fragment
 //=========
 //LISTENERS:
 
+        binding.btnPlaylistFunctions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                PlaylistFunctionsDialogFragment dialogFragment = new PlaylistFunctionsDialogFragment();
+                dialogFragment.show(getChildFragmentManager(), "PlaylistFunctionsDialogFragment");
+            }
+        });
+
+
+        binding.btnPlaylistStats.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PlaylistStatsDialogFragment dialogFragment = new PlaylistStatsDialogFragment();
+                dialogFragment.show(getChildFragmentManager(), "PlaylistFunctionsDialogFragment");
+            }
+        });
 
 //=========
 
@@ -90,13 +108,12 @@ public class PlaylistsFragment extends Fragment
         recycAllPlaylists.setAdapter(recycAllPlaylists_Adapter);
 
 
-        //
-        //YOU ARE HERE
-        /*
 
-        Playlist view is working but buggy, you have to go out of the tab and back in for it to load, the adapter just needs to be notified of data changes but from another thread?
+        //todo:
+        //Playlist view tab here is working but buggy, you have to go out of the tab and back in for it to load...
+        //the adapter just needs to be notified of data changes but is tricky from another thread?
 
-         */
+
 
 
         //playlist view tracks adapter:

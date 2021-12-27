@@ -7,6 +7,7 @@ import com.example.spotman.classes.misc.MyLogger;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -72,6 +73,9 @@ public class MainActivity extends AppCompatActivity
         //init requester:
             // (init in global after the setup stuff)
             // provide the requester with a context reference
+
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
 
         global.initRequester(this);
         global.mainContext = this;

@@ -1,414 +1,276 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".classes.ui.track.TrackFragment">
 
+
     <LinearLayout
+        android:id="@+id/linTopSectionTrack"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:elevation="1dp"
-        android:orientation="vertical"
-        android:outlineProvider="bounds">
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:background="#1AAE3611"
+        android:orientation="horizontal"
+        android:padding="4dp">
 
         <LinearLayout
-            android:id="@+id/linTrackTitle"
-            android:layout_width="match_parent"
+            android:id="@+id/linPicAndNameTrack"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:background="#339E7171"
-            android:elevation="1dp"
+            android:gravity="center_horizontal"
             android:orientation="vertical"
-            android:outlineProvider="bounds"
-            android:padding="5dp">
+            android:padding="4dp">
+
+            <ImageView
+                android:id="@+id/imgProfilePicTrack"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="#BA3A3A"
+                tools:src="@drawable/meicon" />
 
             <TextView
-                android:id="@+id/txtTrackName"
-                android:layout_width="match_parent"
+                android:id="@+id/txtProfileNameTrack"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Track name" />
-
-            <TextView
-                android:id="@+id/txtTrackArtist"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Artist"
-                android:textStyle="italic" />
+                android:text="User Name"
+                android:textStyle="bold" />
         </LinearLayout>
 
-        <TableLayout
-            android:id="@+id/tblAudioFeatures"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="6dp"
-            android:background="#339E7171"
-            android:clipToPadding="false"
-            android:elevation="1dp"
-            android:outlineProvider="bounds"
-            android:padding="7dp"
-            android:stretchColumns="0,3">
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:clipToPadding="false">
-
-                <TextView
-                    android:id="@+id/lblTrackEnergy"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="2dp"
-                    android:text="Energy" />
-
-                <TextView
-                    android:id="@+id/txtTrackEnergy"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginTop="-1dp"
-                    android:layout_marginBottom="-1dp"
-                    android:text="0"
-                    android:textStyle="bold" />
-
-                <ImageButton
-                    android:id="@+id/imgInfoEnergy"
-                    android:layout_width="23dp"
-                    android:layout_height="24dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="17dp"
-                    android:background="@drawable/helpicon"
-                    android:backgroundTint="#80142CCF"
-                    android:scaleType="centerCrop" />
-
-                <TextView
-                    android:id="@+id/lblTrackLiveliness"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:text="Liveliness" />
-
-                <TextView
-                    android:id="@+id/txtTrackLiveliness2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginTop="-1dp"
-                    android:layout_marginBottom="-1dp"
-                    android:text="0"
-                    android:textStyle="bold" />
-
-                <ImageButton
-                    android:id="@+id/imgInfoLiveliness"
-                    android:layout_width="23dp"
-                    android:layout_height="24dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="10dp"
-                    android:background="@drawable/helpicon"
-                    android:backgroundTint="#80142CCF"
-                    android:scaleType="centerCrop" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:clipToPadding="false">
-
-                <TextView
-                    android:id="@+id/lblTrackSpeechiness"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="2dp"
-                    android:text="Speechiness" />
-
-                <TextView
-                    android:id="@+id/txtTrackSpeechiness2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginTop="-1dp"
-                    android:layout_marginBottom="-1dp"
-                    android:text="0"
-                    android:textStyle="bold" />
-
-                <ImageButton
-                    android:id="@+id/imgInfoSpeechiness"
-                    android:layout_width="23dp"
-                    android:layout_height="24dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="17dp"
-                    android:background="@drawable/helpicon"
-                    android:backgroundTint="#80142CCF"
-                    android:scaleType="centerCrop" />
-
-                <TextView
-                    android:id="@+id/lblTrackDanceability"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:text="Danceability" />
-
-                <TextView
-                    android:id="@+id/txtTrackDanceability2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginTop="-1dp"
-                    android:layout_marginBottom="-1dp"
-                    android:text="0"
-                    android:textStyle="bold" />
-
-                <ImageButton
-                    android:id="@+id/imgInfoDanceability"
-                    android:layout_width="23dp"
-                    android:layout_height="24dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="10dp"
-                    android:background="@drawable/helpicon"
-                    android:backgroundTint="#80142CCF"
-                    android:scaleType="centerCrop" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:clipToPadding="false">
-
-                <TextView
-                    android:id="@+id/lblTrackValence"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="2dp"
-                    android:text="Valence" />
-
-                <TextView
-                    android:id="@+id/txtTrackValence2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginTop="-1dp"
-                    android:layout_marginBottom="-1dp"
-                    android:text="0"
-                    android:textStyle="bold" />
-
-                <ImageButton
-                    android:id="@+id/imgInfoValence"
-                    android:layout_width="23dp"
-                    android:layout_height="24dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="17dp"
-                    android:background="@drawable/helpicon"
-                    android:backgroundTint="#80142CCF"
-                    android:scaleType="centerCrop" />
-
-                <TextView
-                    android:id="@+id/lblTrackAcousticness"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:text="Acousticness" />
-
-                <TextView
-                    android:id="@+id/lblTrackAcousticness2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginTop="-1dp"
-                    android:layout_marginBottom="-1dp"
-                    android:text="0"
-                    android:textStyle="bold" />
-
-                <ImageButton
-                    android:id="@+id/imgInfoAcousticness"
-                    android:layout_width="23dp"
-                    android:layout_height="24dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="10dp"
-                    android:background="@drawable/helpicon"
-                    android:backgroundTint="#80142CCF"
-                    android:scaleType="centerCrop" />
-
-            </TableRow>
-
-        </TableLayout>
-
-        <TableLayout
-            android:id="@+id/tblMusicalFeatures"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="6dp"
-            android:background="#339E7171"
-            android:clipToPadding="false"
-            android:elevation="1dp"
-            android:outlineProvider="bounds"
-            android:padding="7dp"
-            android:stretchColumns="0,3">
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/lblTrackLoudness"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="2dp"
-                    android:text="Loudness" />
-
-                <TextView
-                    android:id="@+id/txtTrackLoudness"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginTop="-1dp"
-                    android:layout_marginBottom="-1dp"
-                    android:text="0"
-                    android:textStyle="bold" />
-
-                <ImageButton
-                    android:id="@+id/imgInfoLoudness"
-                    android:layout_width="23dp"
-                    android:layout_height="24dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="17dp"
-                    android:background="@drawable/helpicon"
-                    android:backgroundTint="#80142CCF"
-                    android:scaleType="centerCrop" />
-
-                <TextView
-                    android:id="@+id/lblen"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="2dp"
-                    android:text="Tempo" />
-
-                <TextView
-                    android:id="@+id/txtTrackTempo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginTop="-1dp"
-                    android:layout_marginBottom="-1dp"
-                    android:text="0"
-                    android:textStyle="bold" />
-
-                <ImageButton
-                    android:id="@+id/imgInfoTempo"
-                    android:layout_width="23dp"
-                    android:layout_height="24dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="10dp"
-                    android:background="@drawable/helpicon"
-                    android:backgroundTint="#80142CCF"
-                    android:scaleType="centerCrop" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/lbltime"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="2dp"
-                    android:text="Time signature" />
-
-                <TextView
-                    android:id="@+id/txtTimeSignature"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginTop="-1dp"
-                    android:layout_marginBottom="-1dp"
-                    android:text="0"
-                    android:textStyle="bold" />
-
-                <ImageButton
-                    android:id="@+id/imgInfoTimeSignature"
-                    android:layout_width="23dp"
-                    android:layout_height="24dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="17dp"
-                    android:background="@drawable/helpicon"
-                    android:backgroundTint="#80142CCF"
-                    android:scaleType="centerCrop" />
-
-                <TextView
-                    android:id="@+id/lblen2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="2dp"
-                    android:text="something else" />
-
-                <TextView
-                    android:id="@+id/txtTrackTempo2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginTop="-1dp"
-                    android:layout_marginBottom="-1dp"
-                    android:text="0"
-                    android:textStyle="bold" />
-
-                <ImageButton
-                    android:id="@+id/imgInfoTempo2"
-                    android:layout_width="23dp"
-                    android:layout_height="24dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="10dp"
-                    android:background="@drawable/helpicon"
-                    android:backgroundTint="#80142CCF"
-                    android:scaleType="centerCrop" />
-            </TableRow>
-        </TableLayout>
-
         <LinearLayout
-            android:id="@+id/linTrackRecommended"
+            android:id="@+id/linTrackInfo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="6dp"
-            android:background="#339E7171"
-            android:elevation="1dp"
+            android:layout_height="match_parent"
+            android:gravity="end"
             android:orientation="vertical"
-            android:outlineProvider="paddedBounds"
-            android:padding="7dp">
+            android:padding="4dp">
+
 
             <TextView
-                android:id="@+id/textView30"
-                android:layout_width="match_parent"
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:text="Recommended from this track" />
+                android:layout_margin="2dp"
+                android:text="TextView" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycTrackReommended"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="1dp"
-                android:background="#0D684E4E"
-                android:padding="4dp" />
+            <TextView
+                android:id="@+id/textView56"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:text="TextView" />
+
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:text="TextView" />
+
         </LinearLayout>
 
     </LinearLayout>
 
-</FrameLayout>
+
+    <com.google.android.material.chip.ChipGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:layout_marginBottom="10dp"
+        android:background="#1AAB75CC"
+        app:singleLine="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:checked="true"
+            android:scaleY="1.2"
+            android:text="Basic"
+            app:chipEndPadding="15dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:checked="true"
+            android:scaleY="1.2"
+            android:text="Stats"
+            app:chipEndPadding="15dp"
+            tools:text="Stats" />
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:checked="true"
+            android:scaleY="1.2"
+            android:text="Audio Features"
+            app:chipEndPadding="15dp"
+            tools:text="Audio Features" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:checked="true"
+            android:scaleY="1.2"
+            android:text="Musical Features"
+            app:chipEndPadding="15dp"
+            tools:text="Musical Features" />
+
+    </com.google.android.material.chip.ChipGroup>
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:text="Highest audio feature:" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:text="Instrumentalness" />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginHorizontal="5dp"
+                android:text="91%" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:text="Lowest audio feature:" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:text="Valence" />
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginHorizontal="5dp"
+                android:text="43%" />
+        </TableRow>
+
+    </TableLayout>
+
+    <Button
+        android:id="@+id/button14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_margin="3dp"
+        android:text="All audio features" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:text="Highest audio feature:" />
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:text="Instrumentalness" />
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginHorizontal="5dp"
+                android:text="91%" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:text="Lowest audio feature:" />
+
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:text="Valence" />
+
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginHorizontal="5dp"
+                android:text="43%" />
+        </TableRow>
+
+    </TableLayout>
+
+    <Button
+        android:id="@+id/button16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_margin="3dp"
+        android:text="All musical features" />
+
+</LinearLayout>

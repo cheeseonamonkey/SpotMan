@@ -3,14 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Alexander/AndroidStudioProjects/SpotMan/app/src/main/res/layout/asdf.xml" value="0.23697916666666666" />
         <entry key="..\:/Users/Alexander/AndroidStudioProjects/SpotMan/app/src/main/res/layout/audio_features_sliders_fragment.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Alexander/AndroidStudioProjects/SpotMan/app/src/main/res/layout/fragment_me.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Alexander/AndroidStudioProjects/SpotMan/app/src/main/res/layout/layouts.xml" value="0.23697916666666666" />
         <entry key="..\:/Users/Alexander/AndroidStudioProjects/SpotMan/app/src/main/res/layout/misc_fragment.xml" value="0.22" />
         <entry key="..\:/Users/Alexander/AndroidStudioProjects/SpotMan/app/src/main/res/layout/playlist_card_simple.xml" value="0.35260416666666666" />
-        <entry key="..\:/Users/Alexander/AndroidStudioProjects/SpotMan/app/src/main/res/layout/playlists_fragment.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/Alexander/AndroidStudioProjects/SpotMan/app/src/main/res/layout/playlist_functions_dialog_fragment.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/Alexander/AndroidStudioProjects/SpotMan/app/src/main/res/layout/playlist_stats_dialog_fragment.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/Alexander/AndroidStudioProjects/SpotMan/app/src/main/res/layout/playlists_fragment.xml" value="0.33" />
         <entry key="..\:/Users/Alexander/AndroidStudioProjects/SpotMan/app/src/main/res/layout/profile_fragment.xml" value="0.17708333333333334" />
+        <entry key="..\:/Users/Alexander/AndroidStudioProjects/SpotMan/app/src/main/res/layout/profile_me_sub_view_fragment.xml" value="0.35260416666666666" />
         <entry key="..\:/Users/Alexander/AndroidStudioProjects/SpotMan/app/src/main/res/layout/profile_sub_view_fragment.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Alexander/AndroidStudioProjects/SpotMan/app/src/main/res/layout/track_card_simple.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/Alexander/AndroidStudioProjects/SpotMan/app/src/main/res/layout/track_fragment.xml" value="0.35260416666666666" />
         <entry key="..\:/Users/chees/AndroidStudioProjects/SpotMan/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.21875" />
         <entry key="..\:/Users/chees/AndroidStudioProjects/SpotMan/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.21875" />
         <entry key="..\:/Users/chees/AndroidStudioProjects/SpotMan/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.21875" />
