@@ -8,6 +8,14 @@ import com.spotify.sdk.android.auth.AuthorizationClient;
 
 public class AccessToken
 {
+    public AccessToken()
+    {
+    }
+
+    public AccessToken(String access_token)
+    {
+        this.access_token = access_token;
+    }
 
     public static AccessToken newToken()
     {

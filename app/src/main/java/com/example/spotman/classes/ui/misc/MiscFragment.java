@@ -2,6 +2,8 @@ package com.example.spotman.classes.ui.misc;
 
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -16,6 +18,7 @@ import android.widget.Toast;
 import com.example.spotman.MainActivity;
 import com.example.spotman.R;
 import com.example.spotman.classes.misc.Global;
+import com.example.spotman.classes.misc.http.AccessToken;
 import com.example.spotman.classes.ui.splash.SplashDialog;
 import com.example.spotman.databinding.MiscFragmentBinding;
 
@@ -81,6 +84,26 @@ binding.btnGetMe.setOnClickListener(new View.OnClickListener()
         
 
     }
+});
+
+binding.btnConnectWithCode.setOnClickListener(new View.OnClickListener()
+{
+    @Override
+    public void onClick(View view)
+    {
+
+        SharedPreferences prefs = getContext().getSharedPreferences("auth", Context.MODE_PRIVATE);
+        String savedAccessToken = prefs.getString("accessToken", null);//If there is no YOURKEY found null will be the default value.
+
+        MainActivity.global.accessToken = new AccessToken(savedAccessToken);
+
+MainActivity.log.log("Retrieving saved token: " + savedAccessToken);
+
+        MainActivity.global.getMe();
+
+    }
+
+
 });
 
 binding.btnSelectTestProfile.setOnClickListener(new View.OnClickListener() {

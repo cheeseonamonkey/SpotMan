@@ -4,6 +4,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -73,6 +74,9 @@ public class AuthActivity extends AppCompatActivity
                   //   authToken = authResponse.getAccessToken();
                     MainActivity.log.log("Auth success! \n-\t Access token= " + authToken, "auth");
 
+
+
+
                     if(MainActivity.global.accessToken == null)
                         MainActivity.global.accessToken = AccessToken.newToken();
 
@@ -82,6 +86,10 @@ public class AuthActivity extends AppCompatActivity
 
                     MainActivity.global.authenticated = true;
 
+
+                    SharedPreferences.Editor editor = getSharedPreferences("auth", MODE_PRIVATE).edit();
+                    editor.putString("accessToken", MainActivity.global.accessToken.access_token );
+                    editor.commit();
 
                     this.finish();
 

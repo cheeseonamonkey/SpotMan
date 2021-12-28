@@ -16,6 +16,12 @@
             android:layout_height="wrap_content"
             android:text="Connect to Spotify" />
 
+        <Button
+            android:id="@+id/btnConnectWithCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Use saved token" />
+
         <View
             android:id="@+id/divider2"
             android:layout_width="match_parent"
