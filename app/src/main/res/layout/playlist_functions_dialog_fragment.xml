@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:background="#1AAB75CC"
-        app:singleLine="true">
+        app:singleLine="false">
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chip8"
@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:checkable="true"
             android:checked="true"
-            android:scaleY="1.2"
+            android:scaleY="1.15"
             android:text="Basic"
             app:chipEndPadding="15dp" />
 
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:checkable="true"
             android:checked="true"
-            android:scaleY="1.2"
+            android:scaleY="1.15"
             android:text="Generation"
             app:chipEndPadding="15dp" />
 
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:checkable="true"
             android:checked="true"
-            android:scaleY="1.2"
+            android:scaleY="1.15"
             android:text="Tracks"
             app:chipEndPadding="15dp" />
 
@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:checkable="true"
             android:checked="true"
-            android:scaleY="1.2"
+            android:scaleY="1.15"
             android:text="Something else"
             app:chipEndPadding="15dp" />
     </com.google.android.material.chip.ChipGroup>

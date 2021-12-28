@@ -12,7 +12,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.spotman.MainActivity;
 import com.example.spotman.R;
 import com.example.spotman.classes.models.root.PlaylistList;
 import com.example.spotman.classes.models.subObjects.Item;
@@ -89,7 +88,7 @@ public class RecycAdapter_PlaylistsAll extends RecyclerView.Adapter<RecycAdapter
         TextView txtPlaylistNumTracks;
         Spinner spnPlaylistCardActions;
 
-        ImageButton imgBtnGo;
+        ImageButton imgBtnGoToPlaylist;
 
 
 
@@ -105,13 +104,17 @@ public class RecycAdapter_PlaylistsAll extends RecyclerView.Adapter<RecycAdapter
             txtPlaylistNumTracks = view.findViewById(R.id.txtPlaylistNumTracks);
             spnPlaylistCardActions = view.findViewById(R.id.spnPlaylistCardActions);
 
-            imgBtnGo = view.findViewById(R.id.imgBtnPlaylistView);
+            imgBtnGoToPlaylist = view.findViewById(R.id.imgBtnPlaylistView);
 
-            imgBtnGo.setOnClickListener(new View.OnClickListener() {
+            imgBtnGoToPlaylist.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view)
                 {
-                    parentFrag.goToPlaylist(itemList.get(pos).getId());
+                    String playlistId = itemList.get(pos).getId();
+
+                    parentFrag.goToPlaylist(playlistId);
+
+
 
 
                 }

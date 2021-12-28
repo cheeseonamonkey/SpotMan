@@ -20,7 +20,7 @@ import android.widget.TextView;
 
 import com.example.spotman.MainActivity;
 import com.example.spotman.R;
-import com.example.spotman.classes.adapters.RecycAdapter_RecentsTops;
+import com.example.spotman.classes.adapters.RecycAdapter_Track;
 import com.example.spotman.classes.misc.Global;
 import com.example.spotman.classes.models.Settable;
 import com.example.spotman.classes.models.root.PlaylistList;
@@ -43,8 +43,8 @@ public class ProfileSubViewFragment extends Fragment implements LoadableSubView
 
 //recyclers (just inits for scope, data done in interface methods to prevent null errors)
 
-    RecycAdapter_RecentsTops recycAdapterRecents;
-    RecycAdapter_RecentsTops recycAdapterTops;
+    RecycAdapter_Track recycAdapterRecents;
+    RecycAdapter_Track recycAdapterTops;
 
 //=========
 
@@ -168,7 +168,7 @@ public class ProfileSubViewFragment extends Fragment implements LoadableSubView
             recycRecents.setLayoutManager(new LinearLayoutManager(getContext()));
 
             //fill in the constructor
-            recycAdapterRecents = new RecycAdapter_RecentsTops(recents, getContext());
+            recycAdapterRecents = new RecycAdapter_Track(recents, getContext());
 
 
             //set adapter
@@ -184,7 +184,7 @@ public class ProfileSubViewFragment extends Fragment implements LoadableSubView
             recycTops.setLayoutManager(new LinearLayoutManager(getContext()));
 
             //fill in the constructor
-            recycAdapterTops = new RecycAdapter_RecentsTops(tops, getContext());
+            recycAdapterTops = new RecycAdapter_Track(tops, getContext());
 
             //set adapter
             recycTops.setAdapter(recycAdapterTops);

@@ -28,8 +28,8 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_margin="1dp"
                 tools:src="@tools:sample/avatars" />
 
@@ -74,21 +74,21 @@
 
             <CheckBox
                 android:id="@+id/ckbHeartTrack"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:background="@drawable/hearticon"
                 android:button="@drawable/emptyimg"
                 android:checked="false"
                 android:minWidth="0dp"
                 android:minHeight="0dp" />
 
-            <Spinner
-                android:id="@+id/spnTrackActions"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/dotsverticon"
-                android:entries="@array/trackSpinnerOptions"
-                android:spinnerMode="dropdown" />
+            <ImageButton
+                android:id="@+id/btnTrackCardOptions"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="#00FFFFFF"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/dotsverticon" />
 
         </LinearLayout>
     </LinearLayout>

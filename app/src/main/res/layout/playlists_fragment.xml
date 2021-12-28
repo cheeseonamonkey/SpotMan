@@ -40,7 +40,7 @@
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
                             <Button
@@ -68,12 +68,14 @@
                                 android:text="Functions" />
 
                         </LinearLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycPlaylist"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
                     </LinearLayout>
 
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recycPlaylist"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
                 </LinearLayout>
 
                 <LinearLayout

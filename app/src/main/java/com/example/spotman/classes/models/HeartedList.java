@@ -46,4 +46,14 @@ public class HeartedList implements Settable
     {
         return heartedList;
     }
+
+
+    public static HeartedList fetchHeartedList(String trackIds)
+    {
+        //on set, gets which songs are hearted - must be done in setFromJson() in model to stay synchronous
+        HeartedList heartedList = new HeartedList();
+        MainActivity.global.requester.getAndSetAsync("me/tracks/contains?ids=" + trackIds, heartedList);
+
+        return heartedList;
+    }
 }

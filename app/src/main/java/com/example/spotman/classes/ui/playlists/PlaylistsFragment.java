@@ -18,8 +18,7 @@ import android.widget.TabHost;
 import com.example.spotman.MainActivity;
 import com.example.spotman.R;
 import com.example.spotman.classes.adapters.RecycAdapter_PlaylistsAll;
-import com.example.spotman.classes.adapters.RecycAdapter_RecentsTops;
-import com.example.spotman.classes.ui.splash.SplashDialog;
+import com.example.spotman.classes.adapters.RecycAdapter_Track;
 import com.example.spotman.databinding.PlaylistsFragmentBinding;
 
 public class PlaylistsFragment extends Fragment
@@ -55,6 +54,8 @@ public class PlaylistsFragment extends Fragment
         setupTabs(binding.tabHostPlaylist);
 
         setupAdapters();
+
+        loadTab();
 
 
 
@@ -123,11 +124,10 @@ public class PlaylistsFragment extends Fragment
 
             recycViewPlaylist.setLayoutManager(new LinearLayoutManager(getContext()));
 
-            RecycAdapter_RecentsTops playlistViewTrackAdapter = new RecycAdapter_RecentsTops(MainActivity.global.selectedPlaylistTracks, getContext());
+            RecycAdapter_Track playlistViewTrackAdapter = new RecycAdapter_Track(MainActivity.global.selectedPlaylistTracks, getContext());
 
             //set adapter
             recycViewPlaylist.setAdapter(playlistViewTrackAdapter);
-
 
         }
 
@@ -150,8 +150,7 @@ public class PlaylistsFragment extends Fragment
 
         MainActivity.global.getPlaylist(playlistId, binding);
 
-
-            binding.tabHostPlaylist.setCurrentTabByTag("Playlist");
+        binding.tabHostPlaylist.setCurrentTabByTag("Playlist");
 
 
 
@@ -180,6 +179,11 @@ public class PlaylistsFragment extends Fragment
         PlaylistNameTabSpec.setIndicator("Playlist");
 
         tabHost.addTab(PlaylistNameTabSpec);
+    }
+
+    void loadTab()
+    {
+        MainActivity.global.selectedPlaylistTracks.setHeartedList();
     }
 
 }

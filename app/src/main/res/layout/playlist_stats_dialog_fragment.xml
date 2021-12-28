@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#1AAB75CC"
-            app:singleLine="true">
+            app:singleLine="false">
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip5"
@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:checkable="true"
                 android:checked="true"
-                android:scaleY="1.2"
+                android:scaleY="1.15"
                 android:text="Basic"
                 app:chipEndPadding="15dp" />
 
@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:checkable="true"
                 android:checked="true"
-                android:scaleY="1.2"
+                android:scaleY="1.15"
                 android:text="Algorithm-generated"
                 app:chipEndPadding="15dp" />
 
@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:checkable="true"
                 android:checked="true"
-                android:scaleY="1.2"
+                android:scaleY="1.15"
                 android:text="Compare?"
                 app:chipEndPadding="15dp" />
 
@@ -56,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:checkable="true"
                 android:checked="true"
-                android:scaleY="1.2"
+                android:scaleY="1.15"
                 android:text="Something else"
                 app:chipEndPadding="15dp" />
 

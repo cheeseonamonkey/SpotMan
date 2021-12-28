@@ -93,6 +93,7 @@ public class Global
     {
         requester.getAndSetAsync("playlists/" + playlistId, selectedPlaylist);
         requester.getAndSetAsync("playlists/" + playlistId + "/tracks", selectedPlaylistTracks);
+
     }
 
     public void getPlaylist(String playlistId, PlaylistsFragmentBinding fragmentBinding)

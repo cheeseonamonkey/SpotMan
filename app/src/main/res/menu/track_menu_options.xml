@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/trackMenuOption_track"
+        android:icon="@drawable/trackicon"
+        android:title="Track" />
+    <item android:id="@+id/trackMenuOption_secondThing"
+            android:icon="@drawable/caretrighticon"
+            android:title="Thing2"/>
+        <item android:id="@+id/trackMenuOption_thirdThing"
+            android:icon="@drawable/caretrighticon"
+            android:title="Thing3" />
+    </menu>
